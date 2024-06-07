@@ -1,5 +1,9 @@
+@import '_variables.scss';
 @import '_fonts.scss';
+@import '_typography.scss';
 @import 'wysiwyg.scss';
+
+@import 'home.scss';
 
 * {
     margin: 0;
@@ -10,6 +14,7 @@
 html {
     scroll-behavior: smooth;
     font-size: calc(100vw / 1440 * 10);
+    overflow-x: hidden;
 
     @media (max-width:1024px) {
         font-size: calc(100vw / 768 * 10);
@@ -43,9 +48,14 @@ a {
     text-decoration: none;
 }
 
+.content {
+    max-width: 129.6rem;
+    margin: 0 auto;
+}
+
 .button {
 
-    border: 1px solid #A38D44;
+    border: 0.1rem solid #A38D44;
 
     &-down {
         display: block;
@@ -66,15 +76,34 @@ a {
         /* glass */
         border-radius: 48rem;
         backdrop-filter: blur(2.5rem);
+        color: $white;
+
+        @extend .text-1;
     }
 
     &-white {}
+
+    &-brown {
+        padding: 1.6rem;
+        /* brown */
+        border: 0.2rem solid $brown;
+        border-radius: 4.8rem;
+
+        /* primary green */
+        color: $primary;
+
+        @extend .text-1;
+    }
 }
 
 #header {
     position: sticky;
     top: 0;
     z-index: 10;
+}
+
+.p-154 {
+    padding: 15.4rem;
 }
 
 .p-140 {
@@ -97,6 +126,47 @@ a {
     padding: 9.6rem 0 14rem;
 }
 
-.p-154 {
-    padding: 15.4rem;
+.p-56-0 {
+    padding: 5.6rem 0 0;
+}
+
+
+.p-24 {
+    padding: 2.4rem 0;
+}
+
+.ellipse {
+    opacity: 0.3;
+    filter: blur(25rem);
+    width: 67rem;
+    height: 70.9rem;
+    position: absolute;
+
+    &-brown {
+        background: #A38D44;
+    }
+
+    &-blue {
+        background: #86D8D1;
+    }
+}
+
+.home {
+    .section {
+        position: relative;
+    }
+
+    .ellipse {
+        &-brown {
+            top: 0;
+            right: 0;
+            transform: translate(50%, -50%);
+        }
+
+        &-blue {
+            bottom: 0;
+            left: 0;
+            transform: translateX(-50%);
+        }
+    }
 }
