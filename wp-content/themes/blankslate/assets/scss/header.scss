@@ -1,0 +1,29 @@
+/* Пример CSS для логотипа */
+.custom-logo {
+    height: 3.5rem;
+    width: 13.6rem;
+}
+
+.custom-logo-link {
+    display: inline-block;
+}
+
+#header {
+    background: $bg;
+
+    a.link,
+    .phone {
+        color: $primary;
+    }
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    ul.menu.text-2 {
+        display: flex;
+        gap: 5.6rem;
+    }
+}

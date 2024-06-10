@@ -2,6 +2,7 @@
 @import '_fonts.scss';
 @import '_typography.scss';
 @import 'wysiwyg.scss';
+@import 'header.scss';
 
 @import 'home.scss';
 
@@ -16,9 +17,9 @@ html {
     font-size: calc(100vw / 1440 * 10);
     overflow-x: hidden;
 
-    @media (max-width:1024px) {
-        font-size: calc(100vw / 768 * 10);
-    }
+    // @media (max-width:1024px) {
+    //     font-size: calc(100vw / 768 * 10);
+    // }
 
     @media (max-width:767px) {
         font-size: calc(100vw / 768 * 10);
@@ -40,7 +41,8 @@ li {
     list-style: none;
 }
 
-img {
+img,
+video {
     max-width: 100%;
 }
 
@@ -53,21 +55,40 @@ a {
     margin: 0 auto;
 }
 
-.button {
+.flex {
+    display: flex;
+}
 
+.button {
     border: 0.1rem solid #A38D44;
+    transition: $transition;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
 
     &-down {
-        display: block;
+        display: flex;
         width: 5.6rem;
         height: 5.6rem;
         border-radius: 5rem;
+
+        svg {
+            width: 2.3rem;
+            height: 2.6rem;
+        }
+
+        &:hover {
+            background: $brown;
+
+            path {
+                stroke: $white;
+            }
+        }
     }
 
     &-long {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
         padding: 1.2rem 2.4rem;
         gap: 0.8rem;
         max-width: 58rem;
@@ -79,6 +100,11 @@ a {
         color: $white;
 
         @extend .text-1;
+
+        svg {
+            width: 1.2rem;
+            height: 1.3rem;
+        }
     }
 
     &-white {}
@@ -93,6 +119,26 @@ a {
         color: $primary;
 
         @extend .text-1;
+
+        svg {
+            width: 1.2rem;
+            height: 1.3rem;
+        }
+
+        path {
+            stroke: $primary;
+        }
+
+
+        &:hover {
+            background: $brown;
+            color: $white;
+
+            path {
+                stroke: $white;
+            }
+        }
+
     }
 }
 
@@ -131,8 +177,8 @@ a {
 }
 
 
-.p-24 {
-    padding: 2.4rem 0;
+.p-20 {
+    padding: 2rem 0;
 }
 
 .ellipse {
@@ -141,6 +187,7 @@ a {
     width: 67rem;
     height: 70.9rem;
     position: absolute;
+    z-index: -10;
 
     &-brown {
         background: #A38D44;

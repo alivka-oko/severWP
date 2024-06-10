@@ -2,7 +2,21 @@
 
 add_theme_support('post-thumbnails'); // для всех типов постов
 
+
 add_action('customize_register', function ($wp_customize) {
+    $wp_customize->add_setting('logo');
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'logo',
+            array(
+                'label' => __('Логотип', 'Kama-stroy'),
+                'section' => 'title_tagline',
+                'settings' => 'logo',
+            )
+        )
+    );
+
     // Панель "Главная"
     $wp_customize->add_panel('main_panel', array(
         'title' => 'Главная',
@@ -82,6 +96,18 @@ add_action('customize_register', function ($wp_customize) {
         'section' => 'about_section',
         'type' => 'text',
     ));
+    // Секция "особенности" в панели "Главная"
+    $wp_customize->add_section('features_section', array(
+        'title' => 'Особенности',
+        'panel' => 'main_panel',
+        'priority' => 30,
+    ));
+
+    $wp_customize->add_setting('features_bg');
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'features_bg', array(
+        'label' => 'Фоновое изображение',
+        'section' => 'features_section',
+    )));
 
     // Секция "Лучшее качество" в панели "Главная"
     $wp_customize->add_section('best_quality_section', array(
@@ -183,7 +209,7 @@ add_action('customize_register', function ($wp_customize) {
 
     $wp_customize->add_setting('career_image');
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'career_image', array(
-        'label' => 'Заднее фото',
+        'label' => 'Фоновое изображение',
         'section' => 'career_section',
     )));
 

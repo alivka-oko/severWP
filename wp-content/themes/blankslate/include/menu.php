@@ -14,6 +14,7 @@ function register_additional_menus()
     );
 }
 
+
 // Добавление классов для меню
 function add_additional_class_on_li($classes, $item, $args)
 {
@@ -46,8 +47,3 @@ function add_svg_inside_menu_link($item_output, $item, $depth, $args)
 add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
 add_filter('nav_menu_link_attributes', 'add_additional_class_on_a', 1, 3);
 add_filter('walker_nav_menu_start_el', 'add_svg_inside_menu_link', 10, 4);
-
-
-
-
-

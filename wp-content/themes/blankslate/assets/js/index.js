@@ -1,2 +1,6 @@
 import '../scss/style.scss';
-import '../js/test.js';
+import WOW from 'wowjs';
+import 'animate.css/animate.min.css';
+
+new WOW.WOW().init();
+  

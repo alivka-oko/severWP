@@ -1,4 +1,4 @@
-.home {
+.section-home {
     .catalog-banner {
         height: 49.4rem;
         width: 100%;
@@ -10,5 +10,218 @@
         align-items: end;
 
         padding: 3.2rem;
+
+        margin-top: 5rem;
     }
+
+    .headline {
+        display: flex;
+        gap: 8rem;
+        justify-content: space-between;
+    }
+
+    .right-side {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+}
+
+.about {
+    .content {
+        display: flex;
+        gap: 13.6rem;
+
+        img {
+            border: 0.8rem;
+            width: 100%;
+        }
+
+        .left-side {
+            max-width: 52.6rem;
+            display: flex;
+            flex-direction: column;
+
+            .headline {
+                display: flex;
+                flex-direction: column;
+                gap: 4rem;
+            }
+        }
+
+        .right-side {
+            display: flex;
+            flex-direction: column;
+            gap: 3.2rem;
+            flex-grow: 1;
+        }
+    }
+
+    &_small_image {
+        width: 41.6rem;
+        height: 31rem;
+
+        border-radius: 0.8rem;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+    }
+
+    &_medium_image {
+        width: 100%;
+        height: 54.6rem;
+        border-radius: 0.8rem;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+
+        margin-top: auto;
+    }
+
+    &_large_image {
+        width: 100%;
+        height: 59.6rem;
+        border-radius: 0.8rem;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+    }
+}
+
+.image-item {
+    position: relative;
+}
+
+.mini-block {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -9rem;
+    /* половина высоты блока */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3.2rem;
+    gap: 3.2rem;
+
+    color: $white;
+
+    width: 30rem;
+    height: 18rem;
+
+    background: rgba(93, 93, 93, 0.66);
+    border: 0.1rem solid #BFBFBF;
+    backdrop-filter: blur(2.5rem);
+    border-radius: 0.8rem;
+
+    span {
+        color: $white;
+    }
+}
+
+.features {
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+
+    color: $white;
+
+
+    h2 {
+        color: $white;
+    }
+
+    .cards {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 5.6rem;
+
+        .card {
+            img {
+                width: 4rem;
+                height: 4rem;
+            }
+
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+            max-width: 30rem;
+
+            .text-2 {
+                color: $gray;
+            }
+        }
+    }
+}
+
+.best-quality {
+    .top-content {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .left-side {
+        max-width: 62.8rem;
+        width: 62.8rem;
+
+        .words {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+            margin-top: 10rem;
+            gap: 3rem;
+        }
+    }
+
+    .right-side {
+        max-width: 41.6rem;
+    }
+
+    .video-js {
+        margin-top: 7.1rem;
+        width: 100%;
+        height: 53rem;
+        border-radius: 8px;
+
+        :hover {
+            button.vjs-big-play-button {
+                background: rgba(93, 93, 93, 0.66) !important;
+            }
+
+        }
+    }
+
+}
+
+.video-js .vjs-big-play-button {
+    height: 8.8rem !important;
+    width: 8.8rem !important;
+    margin-top: -4.4rem !important;
+    margin-left: -4.4rem !important;
+    border-radius: 100% !important;
+    border: none !important;
+
+    // background-color: rgba(93, 93, 93, 0.66) !important;
+    backdrop-filter: blur(25px) !important;
+
+}
+
+.vjs-big-play-button {
+
+    .vjs-icon-placeholder:before {
+        content: "\f101";
+        font-size: 6rem !important;
+    }
+}
+
+
+.vjs-icon-play,
+.video-js .vjs-play-control .vjs-icon-placeholder,
+.video-js .vjs-big-play-button .vjs-icon-placeholder:before {
+    font-family: VideoJS;
+    font-weight: normal;
+    font-style: normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

@@ -31,4 +31,14 @@ function getWordForm($n, $titles)
 }
 
 
+function text_br($text)
+{
+    return nl2br($text);
+}
 
+
+function video_url($id)
+{
+    $video_url = wp_get_attachment_url($id);
+    return  esc_url($video_url);
+}
