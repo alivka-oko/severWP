@@ -29,16 +29,3 @@ function getWordForm($n, $titles)
     $cases = array(2, 0, 1, 1, 1, 2);
     return $titles[($n % 100 > 4 && $n % 100 < 20) ? 2 : $cases[min($n % 10, 5)]];
 }
-
-
-function text_br($text)
-{
-    return nl2br($text);
-}
-
-
-function video_url($id)
-{
-    $video_url = wp_get_attachment_url($id);
-    return  esc_url($video_url);
-}

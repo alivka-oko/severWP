@@ -17,6 +17,19 @@ add_action('customize_register', function ($wp_customize) {
         )
     );
 
+    $wp_customize->add_setting('mini-logo');
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'mini-logo',
+            array(
+                'label' => __('Небольшой логотип (моб. версия)', 'Kama-stroy'),
+                'section' => 'title_tagline',
+                'settings' => 'mini-logo',
+            )
+        )
+    );
+
     // Панель "Главная"
     $wp_customize->add_panel('main_panel', array(
         'title' => 'Главная',
@@ -103,6 +116,13 @@ add_action('customize_register', function ($wp_customize) {
         'priority' => 30,
     ));
 
+    $wp_customize->add_setting('features_title', array('default' => 'Особенности'));
+    $wp_customize->add_control('features_title', array(
+        'label' => 'Заголовок',
+        'section' => 'features_section',
+        'type' => 'text',
+    ));
+
     $wp_customize->add_setting('features_bg');
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'features_bg', array(
         'label' => 'Фоновое изображение',
@@ -116,47 +136,81 @@ add_action('customize_register', function ($wp_customize) {
         'priority' => 30,
     ));
 
+    $wp_customize->add_setting('best_quality_title', array('default' => 'Лучшее качество'));
+    $wp_customize->add_control('best_quality_title', array(
+        'label' => 'Заголовок',
+        'section' => 'best_quality_section',
+        'type' => 'text',
+    ));
+
     $wp_customize->add_setting('best_quality_word1', array('default' => ''));
     $wp_customize->add_control('best_quality_word1', array(
-        'label' => 'слово 1',
+        'label' => 'Слово 1',
         'section' => 'best_quality_section',
         'type' => 'text',
     ));
 
     $wp_customize->add_setting('best_quality_word2', array('default' => ''));
     $wp_customize->add_control('best_quality_word2', array(
-        'label' => 'слово 2',
+        'label' => 'Слово 2',
         'section' => 'best_quality_section',
         'type' => 'text',
     ));
 
     $wp_customize->add_setting('best_quality_word3', array('default' => ''));
     $wp_customize->add_control('best_quality_word3', array(
-        'label' => 'слово 3',
+        'label' => 'Слово 3',
         'section' => 'best_quality_section',
         'type' => 'text',
     ));
 
     $wp_customize->add_setting('best_quality_text_right', array('default' => ''));
     $wp_customize->add_control('best_quality_text_right', array(
-        'label' => 'текст справа',
+        'label' => 'Текст справа',
         'section' => 'best_quality_section',
         'type' => 'textarea',
     ));
 
     $wp_customize->add_setting('best_quality_link', array('default' => ''));
     $wp_customize->add_control('best_quality_link', array(
-        'label' => 'ссылка для перехода',
+        'label' => 'Ссылка для перехода',
         'section' => 'best_quality_section',
         'type' => 'text',
     ));
 
     $wp_customize->add_setting('best_quality_video');
     $wp_customize->add_control(new WP_Customize_Media_Control($wp_customize, 'best_quality_video', array(
-        'label' => 'видео',
+        'label' => 'Видео',
         'section' => 'best_quality_section',
         'mime_type' => 'video',
     )));
+    // секция "основная продукция" в панели "Главная"
+    $wp_customize->add_section('base_products_section', array(
+        'title' => 'Основная продукция',
+        'panel' => 'main_panel',
+        'priority' => 40,
+    ));
+
+    $wp_customize->add_setting('base_products_title', array('default' => 'Основная продукция'));
+    $wp_customize->add_control('base_products_title', array(
+        'label' => 'Заголовок',
+        'section' => 'base_products_section',
+        'type' => 'text',
+    ));
+
+    $wp_customize->add_setting('base_products_text', array('default' => 'Возобновляемая древесина северных лесов является основным сырьём, используемым в продукции Северного стандарта.'));
+    $wp_customize->add_control('base_products_text', array(
+        'label' => 'Текст справа',
+        'section' => 'base_products_section',
+        'type' => 'textarea',
+    ));
+
+    $wp_customize->add_setting('base_products_url', array('default' => ''));
+    $wp_customize->add_control('base_products_url', array(
+        'label' => 'Ссылка перехода',
+        'section' => 'base_products_section',
+        'type' => 'text',
+    ));
 
     // секция "Индивидуальный подход" в панели "Главная"
     $wp_customize->add_section('individual_approach_section', array(
@@ -165,9 +219,23 @@ add_action('customize_register', function ($wp_customize) {
         'priority' => 40,
     ));
 
-    $wp_customize->add_setting('individual_approach_title', array('default' => ''));
+    $wp_customize->add_setting('individual_approach_title', array('default' => 'индивидуальный
+подход'));
     $wp_customize->add_control('individual_approach_title', array(
         'label' => 'Заголовок',
+        'section' => 'individual_approach_section',
+        'type' => 'text',
+    ));
+
+    $wp_customize->add_setting('individual_approach_medium_image');
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'individual_approach_medium_image', array(
+        'label' => 'Среднее фото',
+        'section' => 'individual_approach_section',
+    )));
+
+    $wp_customize->add_setting('individual_approach_sub-title', array('default' => 'Думаем о покупателях'));
+    $wp_customize->add_control('individual_approach_sub-title', array(
+        'label' => 'Подзаголовок',
         'section' => 'individual_approach_section',
         'type' => 'text',
     ));
@@ -178,6 +246,13 @@ add_action('customize_register', function ($wp_customize) {
         'section' => 'individual_approach_section',
         'type' => 'textarea',
     ));
+
+
+    $wp_customize->add_setting('individual_approach_large_image');
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'individual_approach_large_image', array(
+        'label' => 'Большое фото',
+        'section' => 'individual_approach_section',
+    )));
 
     $wp_customize->add_setting('individual_approach_miniblock', array('default' => ''));
     $wp_customize->add_control('individual_approach_miniblock', array(

@@ -20,10 +20,7 @@ get_header();
         </div>
 
         <div class="catalog-banner  wow animate__animated animate__zoomIn" style="background-image:url(<?php echo esc_url(get_theme_mod('main_catalog_image')); ?>)">
-            <a href="#" class="button-long wow animate__animated animate__zoomIn">Посмотреть полный каталог продукции <svg viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2 11L11 1M11 1H2M11 1V11" stroke="white" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="bevel" />
-                </svg>
-            </a>
+            <?= button_long('#', 'Посмотреть полный каталог продукции ') ?>
         </div>
     </div>
     <div class="ellipse ellipse-blue"></div>
@@ -53,12 +50,12 @@ get_header();
     </section>
     <section class="section features p-140" style="background: url(<?php echo esc_url(get_theme_mod('features_bg')); ?>);">
         <div class="content">
-            <h2 class="headline-2">особенности</h2>
+            <h2 class="headline-2 wow animate__animated animate__fadeIn"><?= get_theme_mod('features_title') ?></h2>
             <?php $features = CFS()->get('features');
             if ($features) : ?>
                 <div class="cards">
                     <?php foreach ($features as $item) : ?>
-                        <div class="card">
+                        <div class="card  wow animate__animated animate__fadeInDown">
                             <img src="<?= $item['icon'] ?>" class="card-ico" alt="Иконка">
                             <div class="separator"></div>
                             <h3 class="headline-3"> <?= $item['title'] ?></h3>
@@ -73,15 +70,12 @@ get_header();
         <div class="content">
             <div class="top-content">
                 <div class="left-side">
-                    <h2 class="headline-2">лучшее качество</h2>
+                    <h2 class="headline-2"><?= get_theme_mod('best_quality_title') ?></h2>
                     <div class="words">
                         <p class="headline-3"><?= get_theme_mod('best_quality_word1') ?></p>
                         <p class="headline-3"><?= get_theme_mod('best_quality_word3') ?></p>
                         <p class="headline-3"><?= get_theme_mod('best_quality_word2') ?></p>
-                        <a href="" class="button button-brown">Подробнее <svg viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M2 11L11 1M11 1H2M11 1V11" stroke="white" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="bevel" />
-                            </svg>
-                        </a>
+                        <?= button_brown('#', 'Подробнее') ?>
                     </div>
                 </div>
                 <div class="right-side">
@@ -97,6 +91,116 @@ get_header();
                     <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
                 </p>
             </video>
+        </div>
+    </section>
+    <section class="section base-products p-0-140">
+        <div class="content">
+            <div class="top-content">
+                <div class="left-side">
+                    <h2 class="headline-2"><?= get_theme_mod('base_products_title') ?></h2>
+                </div>
+                <div class="right-side">
+                    <p class="text-1"><?= text_br(get_theme_mod('base_products_text', '')); ?>
+                    </p>
+                </div>
+            </div>
+            <div class="cards p-56">
+                <a href="#" class="card" style="background:url('https://get.pxhere.com/photo/tree-nature-forest-branch-winter-plant-wood-leaf-green-grow-evergreen-fir-christmas-tree-twig-conifer-spruce-needles-periwinkle-of-course-larch-pine-cones-pine-needles-needle-branch-tannenzweig-plant-stem-woody-plant-land-plant-arecales-palm-family-582573.jpg')">
+                    <?= button_long('', 'Деревянная доска для пола') ?>
+                </a>
+                <a href="#" class="card" style="background:url('https://i.sdvk-oboi.ru/i/Antimarker/Antimarker/85964.jpg')">
+                    <?= button_long('', 'Деревянная доска для пола') ?>
+                </a>
+                <a href="#" class="card" style="background:url('https://get.pxhere.com/photo/tree-nature-forest-branch-winter-plant-wood-leaf-green-grow-evergreen-fir-christmas-tree-twig-conifer-spruce-needles-periwinkle-of-course-larch-pine-cones-pine-needles-needle-branch-tannenzweig-plant-stem-woody-plant-land-plant-arecales-palm-family-582573.jpg')">
+                    <?= button_long('', 'Деревянная доска для пола') ?>
+                </a>
+                <a href="#" class="card" style="background:url('https://get.pxhere.com/photo/tree-nature-forest-branch-winter-plant-wood-leaf-green-grow-evergreen-fir-christmas-tree-twig-conifer-spruce-needles-periwinkle-of-course-larch-pine-cones-pine-needles-needle-branch-tannenzweig-plant-stem-woody-plant-land-plant-arecales-palm-family-582573.jpg')">
+                    <?= button_long('', 'Деревянная доска для пола') ?>
+                </a>
+                <a href="#" class="card" style="background:url('https://get.pxhere.com/photo/tree-nature-forest-branch-winter-plant-wood-leaf-green-grow-evergreen-fir-christmas-tree-twig-conifer-spruce-needles-periwinkle-of-course-larch-pine-cones-pine-needles-needle-branch-tannenzweig-plant-stem-woody-plant-land-plant-arecales-palm-family-582573.jpg')">
+                    <?= button_long('', 'Деревянная доска для пола') ?>
+                </a>
+                <a href="#" class="card" style="background:url('https://get.pxhere.com/photo/tree-nature-forest-branch-winter-plant-wood-leaf-green-grow-evergreen-fir-christmas-tree-twig-conifer-spruce-needles-periwinkle-of-course-larch-pine-cones-pine-needles-needle-branch-tannenzweig-plant-stem-woody-plant-land-plant-arecales-palm-family-582573.jpg')">
+                    <?= button_long('', 'Деревянная доска для пола') ?>
+                </a>
+            </div>
+            <?= button_brown(get_theme_mod('base_products_url'), 'Полный каталог') ?>
+        </div>
+    </section>
+    <section class="section individual-approach p-0-140">
+        <div class="content">
+            <div class="left-side">
+                <h2 class="headline-2  wow animate__animated animate__fadeInUp"><?= get_theme_mod('individual_approach_title') ?></h2>
+                <div class="main-part">
+                    <div class="medium-image" style="background:url(<?= get_theme_mod('individual_approach_medium_image') ?>)"></div>
+                    <div class="text-block">
+                        <h3 class="headline-3"> <?= get_theme_mod('individual_approach_sub-title') ?></h3>
+                        <p class="text-1"> <?= text_br(get_theme_mod('individual_approach_description')) ?></p>
+                    </div>
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="mini-block wow animate__animated animate__fadeInLeft"><span class="headline-3">></span><span class="headline-2">1000</span><span class="text-2">довольных
+                        клиентов</span></div>
+                <div class="large-image" style="background:url(<?= get_theme_mod('individual_approach_large_image') ?>)"></div>
+            </div>
+        </div>
+    </section>
+    <section class="section career p-140" style="background: url(<?php echo esc_url(get_theme_mod('career_image')); ?>);">
+        <div class="content">
+            <div class="card  wow animate__animated animate__fadeInDown">
+                <img src="<?= get_theme_mod('mini-logo') ?>" alt="логотип">
+                <h2 class="headline-2 wow animate__animated animate__fadeIn"><?= get_theme_mod('career_title') ?></h2>
+                <p class="text-1"><?= get_theme_mod('career_description') ?></p>
+                <?= button_white('#', 'Посмотреть вакансии') ?>
+            </div>
+        </div>
+    </section>
+    <section class="section recent-publications p-140">
+        <div class="content">
+            <div class="top-content">
+                <h2 class="headline-2"><?= get_theme_mod('recent_publications_title') ?></h2>
+                <p class="text-1"><?= text_br(get_theme_mod('recent_publications_description')); ?> </p>
+            </div>
+            <div class="cards p-56">
+                <div class="card">
+                    <a href="#" class="card-image" style="background: url('https://get.pxhere.com/photo/tree-nature-forest-branch-winter-plant-wood-leaf-green-grow-evergreen-fir-christmas-tree-twig-conifer-spruce-needles-periwinkle-of-course-larch-pine-cones-pine-needles-needle-branch-tannenzweig-plant-stem-woody-plant-land-plant-arecales-palm-family-582573.jpg')"></a>
+                    <a href="#" class="card-text-block">
+                        <h3 class="headline-3 card-title">Расширение нашего ассортимента новыми позициями</h3>
+                        <p class="text-1 card-description">Новые позиции отражают последние тенденции и ожидания клиентов, подчёркивая прогрессивный подход компании к развитию бизнеса.</p>
+                        <span class="text-2 card-date">28.10</span>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#" class="card-image" style="background: url('https://get.pxhere.com/photo/tree-nature-forest-branch-winter-plant-wood-leaf-green-grow-evergreen-fir-christmas-tree-twig-conifer-spruce-needles-periwinkle-of-course-larch-pine-cones-pine-needles-needle-branch-tannenzweig-plant-stem-woody-plant-land-plant-arecales-palm-family-582573.jpg')"></a>
+                    <a href="#" class="card-text-block">
+                        <h3 class="headline-3 card-title">Расширение нашего ассортимента новыми позициями</h3>
+                        <p class="text-1 card-description">Новые позиции отражают последние тенденции и ожидания клиентов, подчёркивая прогрессивный подход компании к развитию бизнеса.</p>
+                        <span class="text-2 card-date">28.10</span>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="#" class="card-image" style="background: url('https://get.pxhere.com/photo/tree-nature-forest-branch-winter-plant-wood-leaf-green-grow-evergreen-fir-christmas-tree-twig-conifer-spruce-needles-periwinkle-of-course-larch-pine-cones-pine-needles-needle-branch-tannenzweig-plant-stem-woody-plant-land-plant-arecales-palm-family-582573.jpg')"></a>
+                    <a href="#" class="card-text-block">
+                        <h3 class="headline-3 card-title">Расширение нашего ассортимента новыми позициями</h3>
+                        <p class="text-1 card-description">Новые позиции отражают последние тенденции и ожидания клиентов, подчёркивая прогрессивный подход компании к развитию бизнеса.</p>
+                        <span class="text-2 card-date">28.10</span>
+                    </a>
+                </div>
+
+            </div>
+            <?= button_brown(get_theme_mod('base_products_url'), 'Перейти в медиа') ?>
+        </div>
+    </section>
+    <section class="section contact-form p-140-0" style="background: url(<?php echo esc_url(get_theme_mod('contact_form_image')); ?>);">
+        <div class="content">
+            <div class="text-block">
+                <h2 class="headline-2 wow animate__animated animate__fadeIn"><?= get_theme_mod('contact_form_title') ?></h2>
+                <p class="text-1"><?= get_theme_mod('contact_form_description') ?></p>
+            </div>
+        </div>
+        <div class="form-block">
+            <?php echo do_shortcode('[contact-form-7 id="383ebcb" title="Contact form 1"]') ?>
         </div>
     </section>
     <?php

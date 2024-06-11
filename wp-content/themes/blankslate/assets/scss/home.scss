@@ -1,4 +1,6 @@
 .section-home {
+    overflow-x: hidden;
+
     .catalog-banner {
         height: 49.4rem;
         width: 100%;
@@ -62,7 +64,7 @@
         width: 41.6rem;
         height: 31rem;
 
-        border-radius: 0.8rem;
+        border-radius: $border;
         background-repeat: no-repeat !important;
         background-size: cover !important;
     }
@@ -70,7 +72,7 @@
     &_medium_image {
         width: 100%;
         height: 54.6rem;
-        border-radius: 0.8rem;
+        border-radius: $border;
         background-repeat: no-repeat !important;
         background-size: cover !important;
 
@@ -80,7 +82,7 @@
     &_large_image {
         width: 100%;
         height: 59.6rem;
-        border-radius: 0.8rem;
+        border-radius: $border;
         background-repeat: no-repeat !important;
         background-size: cover !important;
     }
@@ -90,33 +92,7 @@
     position: relative;
 }
 
-.mini-block {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    margin-top: -9rem;
-    /* половина высоты блока */
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 3.2rem;
-    gap: 3.2rem;
-
-    color: $white;
-
-    width: 30rem;
-    height: 18rem;
-
-    background: rgba(93, 93, 93, 0.66);
-    border: 0.1rem solid #BFBFBF;
-    backdrop-filter: blur(2.5rem);
-    border-radius: 0.8rem;
-
-    span {
-        color: $white;
-    }
-}
 
 .features {
     background-position: center !important;
@@ -150,6 +126,13 @@
             .text-2 {
                 color: $gray;
             }
+
+            .separator {
+                width: 100%;
+                height: 0.1rem;
+                /* glass */
+                border: 0.1rem solid rgba(93, 93, 93, 0.66);
+            }
         }
     }
 }
@@ -170,6 +153,7 @@
             grid-template-columns: 1fr 1fr;
             margin-top: 10rem;
             gap: 3rem;
+            align-items: center;
         }
     }
 
@@ -178,10 +162,11 @@
     }
 
     .video-js {
+        transition: $transition;
         margin-top: 7.1rem;
         width: 100%;
         height: 53rem;
-        border-radius: 8px;
+        border-radius: $border;
 
         :hover {
             button.vjs-big-play-button {
@@ -194,6 +179,8 @@
 }
 
 .video-js .vjs-big-play-button {
+    transition: $transition;
+
     height: 8.8rem !important;
     width: 8.8rem !important;
     margin-top: -4.4rem !important;
@@ -201,8 +188,8 @@
     border-radius: 100% !important;
     border: none !important;
 
-    // background-color: rgba(93, 93, 93, 0.66) !important;
-    backdrop-filter: blur(25px) !important;
+    background-color: rgba(93, 93, 93, 0.66) !important;
+    backdrop-filter: blur(2.5rem) !important;
 
 }
 
@@ -212,6 +199,14 @@
         content: "\f101";
         font-size: 6rem !important;
     }
+}
+
+.video-js:hover .vjs-big-play-button,
+.video-js .vjs-big-play-button:focus {
+    border-color: #fff;
+    background-color: rgba(121, 121, 121, 0.66) !important;
+    transition: all 0s;
+
 }
 
 
@@ -224,4 +219,230 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.base-products {
+    .top-content {
+        display: flex;
+        justify-content: space-between;
+        gap: 0.2rem;
+
+        .left-side {
+            max-width: 63.6rem;
+        }
+
+        .right-side {
+            max-width: 41.6rem;
+        }
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.4rem;
+
+        .card {
+            transition: 0.5s ease-in-out;
+            max-width: 41.6rem;
+            max-height: 28.8rem;
+            width: 41.6rem;
+            height: 28.8rem;
+            border-radius: $border;
+
+            background-size: 110% !important; // Начальное значение background-size
+            background-repeat: no-repeat !important;
+            background-position: center !important;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.6rem;
+
+            &:hover {
+                background-size: 130% !important;
+
+                .button-long {
+                    background: $brown;
+                    color: $white;
+
+                    path {
+                        stroke: $white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.individual-approach {
+    .content {
+        display: flex;
+        justify-content: space-between;
+
+        .left-side {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .headline-2 {
+                max-width: 63rem;
+            }
+
+            .main-part {
+                display: flex;
+                gap: 2.4rem;
+
+                .text-block {
+                    max-width: 41.6rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                }
+            }
+        }
+
+        .right-side {
+            position: relative;
+        }
+    }
+
+    .mini-block {
+        left: -11rem;
+        top: 6.7rem;
+        margin-top: 0rem;
+        gap: 1.5rem;
+    }
+
+    .large-image {
+        width: 41.6rem;
+        height: 64.8rem;
+        max-width: 41.6rem;
+        max-height: 64.8rem;
+    }
+
+    .medium-image {
+        width: 30.6rem;
+        height: 37.6rem;
+        max-width: 30.6rem;
+        max-height: 37.6rem;
+    }
+
+    .large-image,
+    .medium-image {
+        border-radius: $border;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        background-position: center !important;
+    }
+}
+
+.career {
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        padding: 4.8rem;
+
+        width: 100%;
+        max-width: 52.6rem;
+        height: 50.8rem;
+        color: $white;
+
+        background: rgba(93, 93, 93, 0.66);
+        border: 0.1rem solid #394645;
+        backdrop-filter: blur(2.5rem);
+        border-radius: $border;
+
+        img {
+            width: 4.8rem;
+            height: 4.8rem;
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            color: $white;
+        }
+    }
+
+}
+
+.recent-publications {
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.4rem;
+
+        .card {
+            transition: $transition;
+            overflow-x: hidden;
+
+            .card-text-block {
+                display: flex;
+                flex-direction: column;
+                gap: 1.2rem;
+            }
+
+            .card-image {
+                transition: 0.5s ease-in;
+                width: 100%;
+                height: 27.6rem;
+                display: block;
+                background-position: center !important;
+                background-size: 110% !important;
+                border-radius: $border;
+                margin-bottom: 2.4rem;
+            }
+
+            h3 {
+                color: $dark;
+                transition: $transition;
+            }
+
+            p,
+            span {
+                color: $darkgray;
+                transition: $transition;
+            }
+
+            &:hover {
+                .card-image {
+                    background-size: 130% !important;
+                }
+
+                h3 {
+                    color: $brown;
+                }
+            }
+        }
+    }
+}
+
+.contact-form {
+    color: $white;
+
+    .text-block {
+        max-width: 52.6rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem;
+
+        h2,
+        p {
+            color: $white;
+        }
+
+        margin-bottom: 11.8rem;
+    }
+
+    .form-block {
+        padding: 4.8rem 8rem;
+        gap: 8rem;
+        background: rgba(93, 93, 93, 0.66);
+        backdrop-filter: blur(2.5rem);
+    }
 }

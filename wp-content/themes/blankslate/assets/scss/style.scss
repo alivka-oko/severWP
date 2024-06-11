@@ -15,7 +15,6 @@
 html {
     scroll-behavior: smooth;
     font-size: calc(100vw / 1440 * 10);
-    overflow-x: hidden;
 
     // @media (max-width:1024px) {
     //     font-size: calc(100vw / 768 * 10);
@@ -62,6 +61,7 @@ a {
 .button {
     border: 0.1rem solid #A38D44;
     transition: $transition;
+    background: transparent;
 
     display: flex;
     align-items: center;
@@ -98,6 +98,9 @@ a {
         border-radius: 48rem;
         backdrop-filter: blur(2.5rem);
         color: $white;
+        border: none;
+
+        justify-content: space-between;
 
         @extend .text-1;
 
@@ -105,9 +108,44 @@ a {
             width: 1.2rem;
             height: 1.3rem;
         }
+
+        &:hover {
+            background: $brown;
+            color: $white;
+
+            path {
+                stroke: $white;
+            }
+        }
     }
 
-    &-white {}
+    &-white {
+        padding: 1.6rem;
+        border: 0.2rem solid $brown;
+        border-radius: 4.8rem;
+        color: $white;
+        width: 30.6rem;
+        max-width: 30.6rem;
+        @extend .text-1;
+
+        svg {
+            width: 1.2rem;
+            height: 1.3rem;
+        }
+
+        path {
+            stroke: $white;
+        }
+
+        &:hover {
+            background: $brown;
+            color: $white;
+
+            path {
+                stroke: $white;
+            }
+        }
+    }
 
     &-brown {
         padding: 1.6rem;
@@ -118,6 +156,8 @@ a {
         /* primary green */
         color: $primary;
 
+        width: 30.6rem;
+        max-width: 30.6rem;
         @extend .text-1;
 
         svg {
@@ -176,6 +216,10 @@ a {
     padding: 5.6rem 0 0;
 }
 
+.p-56 {
+    padding: 5.6rem 0;
+}
+
 
 .p-20 {
     padding: 2rem 0;
@@ -215,5 +259,33 @@ a {
             left: 0;
             transform: translateX(-50%);
         }
+    }
+}
+
+.mini-block {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -9rem;
+    /* половина высоты блока */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3.2rem;
+    gap: 3.2rem;
+
+    color: $white;
+
+    width: min-content;
+    height: 18rem;
+
+    background: rgba(93, 93, 93, 0.66);
+    border: 0.1rem solid #BFBFBF;
+    backdrop-filter: blur(2.5rem);
+    border-radius: $border;
+
+    span {
+        color: $white;
     }
 }
