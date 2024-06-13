@@ -7,9 +7,10 @@ function register_additional_menus()
     register_nav_menus(
         array(
             'top' => 'Главное меню сайта',
-            'additional_menu' => 'Дополнительное меню',
-            'footer_menu_left' => 'Нижнее меню слева',
-            'footer_menu_right' => 'Нижнее меню справа',
+            'about' => 'О компании',
+            'products' => 'Продукция',
+            'information' => 'Информация',
+            'contacts' => 'Контакты',
         )
     );
 }

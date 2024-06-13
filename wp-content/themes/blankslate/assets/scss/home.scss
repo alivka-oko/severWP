@@ -1,5 +1,5 @@
 .section-home {
-    overflow-x: hidden;
+    overflow-x: clip;
 
     .catalog-banner {
         height: 49.4rem;
@@ -28,9 +28,28 @@
         justify-content: space-between;
         align-items: flex-end;
     }
+
+    .ellipse {
+        &-brown {
+            top: 0;
+            right: 0;
+            transform: translate(50%, -50%);
+        }
+
+        &-blue {
+            left: 0;
+            transform: translateX(-50%);
+            bottom: -30rem;
+        }
+    }
 }
 
+
+
 .about {
+    position: relative;
+
+
     .content {
         display: flex;
         gap: 13.6rem;
@@ -336,7 +355,8 @@
     }
 }
 
-.career {
+.career,
+.mission {
     background-size: cover !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
@@ -350,7 +370,7 @@
 
         width: 100%;
         max-width: 52.6rem;
-        height: 50.8rem;
+        gap: 2.6rem;
         color: $white;
 
         background: rgba(93, 93, 93, 0.66);
@@ -423,6 +443,9 @@
 }
 
 .contact-form {
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
     color: $white;
 
     .text-block {
@@ -444,5 +467,55 @@
         gap: 8rem;
         background: rgba(93, 93, 93, 0.66);
         backdrop-filter: blur(2.5rem);
+    }
+
+    input:not(.button) {
+        background: none;
+        border: none;
+        border-bottom: 0.2rem solid $gray;
+        outline: none;
+        box-shadow: none;
+        padding: 1.4rem 0 1.4rem 0.4rem;
+        color: $gray;
+        width: 30%;
+
+        @extend .text-1;
+    }
+
+    input.wpcf7-form-control::placeholder {
+        color: $gray;
+    }
+
+    .policy-agree {
+        margin-top: 1.6rem;
+
+        p,
+        a {
+            color: $gray;
+        }
+
+        a {
+            text-decoration: underline;
+        }
+    }
+
+    form.wpcf7-form {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+
+.sticky-container {
+    .ellipse.ellipse-blue {
+        left: -20%;
+        top: 45%;
+    }
+}
+
+.about {
+    .ellipse.ellipse-brown {
+        right: -30%;
+        bottom: 0;
     }
 }

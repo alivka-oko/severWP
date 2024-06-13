@@ -460,6 +460,12 @@ add_action('customize_register', function ($wp_customize) {
         'section' => 'about_company_section_3',
         'type' => 'textarea',
     ));
+
+    $wp_customize->add_setting('about_company_section_3_image');
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'about_company_section_3_image', array(
+        'label' => 'Фоновое изображение',
+        'section' => 'about_company_section_3',
+    )));
 });
 
 add_action('customize_register', function ($wp_customize) {

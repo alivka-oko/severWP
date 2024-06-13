@@ -3,8 +3,10 @@
 @import '_typography.scss';
 @import 'wysiwyg.scss';
 @import 'header.scss';
+@import 'footer.scss';
 
 @import 'home.scss';
+@import 'about.scss';
 
 * {
     margin: 0;
@@ -49,13 +51,23 @@ a {
     text-decoration: none;
 }
 
+.main {
+    position: relative;
+}
+
 .content {
     max-width: 129.6rem;
     margin: 0 auto;
 }
 
-.flex {
+.breadcrumbs {
     display: flex;
+    gap: 1.5rem;
+    color: $darkgray;
+
+    a {
+        color: $darkgray;
+    }
 }
 
 .button {
@@ -68,7 +80,10 @@ a {
     justify-content: center;
     gap: 0.8rem;
 
-    &-down {
+    cursor: pointer;
+
+    &-down,
+    &-up {
         display: flex;
         width: 5.6rem;
         height: 5.6rem;
@@ -85,6 +100,12 @@ a {
             path {
                 stroke: $white;
             }
+        }
+    }
+
+    &-up {
+        svg {
+            transform: rotate(180deg);
         }
     }
 
@@ -188,6 +209,13 @@ a {
     z-index: 10;
 }
 
+#top-anchor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+}
+
 .p-154 {
     padding: 15.4rem;
 }
@@ -242,25 +270,15 @@ a {
     }
 }
 
-.home {
-    .section {
-        position: relative;
-    }
-
-    .ellipse {
-        &-brown {
-            top: 0;
-            right: 0;
-            transform: translate(50%, -50%);
-        }
-
-        &-blue {
-            bottom: 0;
-            left: 0;
-            transform: translateX(-50%);
-        }
-    }
+.sticky-container {
+    position: relative;
 }
+
+.section {
+    position: relative;
+    overflow: hidden;
+}
+
 
 .mini-block {
     position: absolute;

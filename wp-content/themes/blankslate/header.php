@@ -9,6 +9,7 @@
 
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
+    <div id="top-anchor"></div>
     <div class="sticky-container"> <!-- start header -->
         <header id="header" role="banner" class="p-20">
             <div class="content">

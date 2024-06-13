@@ -23,11 +23,10 @@ get_header();
             <?= button_long('#', 'Посмотреть полный каталог продукции ') ?>
         </div>
     </div>
-    <div class="ellipse ellipse-blue"></div>
 </section>
+<div class="ellipse ellipse-blue"></div>
 </div><!-- end header -->
-<main class="main home">
-
+<main class="main">
     <section class="section about p-140">
         <div class="content">
             <div class="left-side">
@@ -45,8 +44,8 @@ get_header();
                     <div class="mini-block wow animate__animated animate__fadeInRight"><span class="headline-2">12+</span><span class="text-2">стран продукции</span></div>
                 </div>
             </div>
-
         </div>
+        <div class="ellipse ellipse-brown"></div>
     </section>
     <section class="section features p-140" style="background: url(<?php echo esc_url(get_theme_mod('features_bg')); ?>);">
         <div class="content">
@@ -201,6 +200,9 @@ get_header();
         </div>
         <div class="form-block">
             <?php echo do_shortcode('[contact-form-7 id="383ebcb" title="Contact form 1"]') ?>
+            <div class="policy-agree">
+                <p class="text-2">Нажимая на кнопку отправить, вы принимаете условия</p> <a href="#" class="text-2 link">пользовательского соглашения</a>
+            </div>
         </div>
     </section>
     <?php
