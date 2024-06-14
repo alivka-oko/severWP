@@ -538,3 +538,93 @@ add_action('customize_register', function ($wp_customize) {
         'type' => 'text',
     ));
 });
+
+
+add_action('customize_register', function ($wp_customize) {
+    // Панель "Качество"
+    $wp_customize->add_panel('quality_panel', array(
+        'title' => 'Качество продукции',
+        'priority' => 30,
+    ));
+
+    // Панель "1 секция"
+    $wp_customize->add_section('quality_section_1', array(
+        'title' => '1 секция',
+        'panel' => 'quality_panel',
+        'priority' => 10,
+    ));
+
+    $wp_customize->add_setting('quality_section_1_title', array('default' => ''));
+    $wp_customize->add_control('quality_section_1_title', array(
+        'label' => 'Заголовок',
+        'section' => 'quality_section_1',
+        'type' => 'text',
+    ));
+
+    $wp_customize->add_setting('quality_section_1_desc', array('default' => ''));
+    $wp_customize->add_control('quality_section_1_desc', array(
+        'label' => 'Описание',
+        'section' => 'quality_section_1',
+        'type' => 'textarea',
+    ));
+
+    $wp_customize->add_setting('quality_section_1_medium_image');
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'quality_section_1_medium_image', array(
+        'label' => 'Среднее изображение',
+        'section' => 'quality_section_1',
+    )));
+
+    $wp_customize->add_setting('quality_section_1_big_image');
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'quality_section_1_big_image', array(
+        'label' => 'Большое изображение',
+        'section' => 'quality_section_1',
+    )));
+
+    $wp_customize->add_setting('quality_section_1_block', array('default' => ''));
+    $wp_customize->add_control('quality_section_1_block', array(
+        'label' => 'Мини-блок',
+        'section' => 'quality_section_1',
+        'type' => 'text',
+    ));
+
+    // Панель "2 секция"
+    $wp_customize->add_section('quality_section_2', array(
+        'title' => '2 секция',
+        'panel' => 'quality_panel',
+        'priority' => 10,
+    ));
+
+    $wp_customize->add_setting('quality_section_2_title', array('default' => 'Характеристики'));
+    $wp_customize->add_control('quality_section_2_title', array(
+        'label' => 'Заголовок',
+        'section' => 'quality_section_2',
+        'type' => 'text',
+    ));
+
+    $wp_customize->add_setting('quality_section_2_bg_image');
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'quality_section_2_bg_image', array(
+        'label' => 'Фоновое изображение',
+        'section' => 'quality_section_2',
+    )));
+
+    // Панель "3 секция"
+    $wp_customize->add_section('quality_section_3', array(
+        'title' => '3 секция',
+        'panel' => 'quality_panel',
+        'priority' => 10,
+    ));
+
+    $wp_customize->add_setting('quality_section_3_title', array('default' => 'Характеристики'));
+    $wp_customize->add_control('quality_section_3_title', array(
+        'label' => 'Заголовок',
+        'section' => 'quality_section_3',
+        'type' => 'text',
+    ));
+
+    $wp_customize->add_setting('quality_section_3_desc', array('default' => 'Характеристики'));
+    $wp_customize->add_control('quality_section_3_desc', array(
+        'label' => 'Описание',
+        'section' => 'quality_section_3',
+        'type' => 'text',
+    ));
+});

@@ -1,0 +1,81 @@
+.investment {
+    .content {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .left-side {
+        width: 100%;
+        max-width: 52.6rem;
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+
+        .medium-image {
+            @extend .image-cover;
+            width: 100%;
+            height: 26.2rem;
+            border-radius: $border;
+        }
+    }
+
+    .right-side {
+        width: 100%;
+        max-width: 63.6rem;
+        position: relative;
+
+        .big-image {
+            @extend .image-cover;
+            width: 52.6rem;
+            height: 100%;
+            border-radius: $border;
+        }
+    }
+
+    .mini-block {
+        top: 30%;
+    }
+
+}
+
+.uniq {
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 14rem;
+    }
+
+    .top-content {
+        display: flex;
+        justify-content: space-between;
+        gap: 13.4rem;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.4rem;
+
+        .card {
+            height: 27.6rem;
+            border-radius: $border;
+            padding: 2.4rem 1.6rem;
+            color: $white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            &:nth-child(1) {
+                background: $primary;
+            }
+
+            &:nth-child(2) {
+                background: $brown;
+            }
+
+            &:nth-child(3) {
+                background: rgba(93, 93, 93, 0.66);
+            }
+        }
+    }
+}

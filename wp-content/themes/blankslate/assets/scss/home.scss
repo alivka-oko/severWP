@@ -111,9 +111,14 @@
     position: relative;
 }
 
+.image-cover {
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
 
-
-.features {
+.features,
+.specifications {
     background-position: center !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;

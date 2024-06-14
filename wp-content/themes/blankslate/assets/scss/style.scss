@@ -7,6 +7,8 @@
 
 @import 'home.scss';
 @import 'about.scss';
+@import 'quality.scss';
+@import 'faq.scss';
 
 * {
     margin: 0;
@@ -238,6 +240,10 @@ a {
 
 .p-96-140 {
     padding: 9.6rem 0 14rem;
+}
+
+.p-96-40 {
+    padding: 9.6rem 0 4rem;
 }
 
 .p-56-0 {
