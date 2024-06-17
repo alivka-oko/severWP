@@ -298,7 +298,8 @@
     }
 }
 
-.individual-approach {
+.individual-approach,
+.useful-initiatives {
     .content {
         display: flex;
         justify-content: space-between;
@@ -361,7 +362,8 @@
 }
 
 .career,
-.mission {
+.mission,
+.care {
     background-size: cover !important;
     background-repeat: no-repeat !important;
     background-position: center !important;
