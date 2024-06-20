@@ -1,16 +1,57 @@
-
 <?php
+
+add_filter('single_template', 'my_single_template');
+
+function my_single_template($single)
+{
+    global $wp_query, $post;
+    foreach ((array) get_the_category() as $cat) {
+        if (file_exists(get_template_directory() . '/single-' . $cat->slug . '.php')) {
+            return get_template_directory() . '/single-' . $cat->slug . '.php';
+        } elseif (file_exists('/single-' . $cat->term_id . '.php')) {
+            return get_template_directory() . '/single-' . $cat->term_id . '.php';
+        }
+    }
+    return $single;
+}
+
 
 function translit_sef($value)
 {
     $converter = array(
-        'а' => 'a',    'б' => 'b',    'в' => 'v',    'г' => 'g',    'д' => 'd',
-        'е' => 'e',    'ё' => 'e',    'ж' => 'zh',   'з' => 'z',    'и' => 'i',
-        'й' => 'y',    'к' => 'k',    'л' => 'l',    'м' => 'm',    'н' => 'n',
-        'о' => 'o',    'п' => 'p',    'р' => 'r',    'с' => 's',    'т' => 't',
-        'у' => 'u',    'ф' => 'f',    'х' => 'h',    'ц' => 'c',    'ч' => 'ch',
-        'ш' => 'sh',   'щ' => 'sch',  'ь' => '',     'ы' => 'y',    'ъ' => '',
-        'э' => 'e',    'ю' => 'yu',   'я' => 'ya',
+        'а' => 'a',
+        'б' => 'b',
+        'в' => 'v',
+        'г' => 'g',
+        'д' => 'd',
+        'е' => 'e',
+        'ё' => 'e',
+        'ж' => 'zh',
+        'з' => 'z',
+        'и' => 'i',
+        'й' => 'y',
+        'к' => 'k',
+        'л' => 'l',
+        'м' => 'm',
+        'н' => 'n',
+        'о' => 'o',
+        'п' => 'p',
+        'р' => 'r',
+        'с' => 's',
+        'т' => 't',
+        'у' => 'u',
+        'ф' => 'f',
+        'х' => 'h',
+        'ц' => 'c',
+        'ч' => 'ch',
+        'ш' => 'sh',
+        'щ' => 'sch',
+        'ь' => '',
+        'ы' => 'y',
+        'ъ' => '',
+        'э' => 'e',
+        'ю' => 'yu',
+        'я' => 'ya',
     );
 
     $value = mb_strtolower($value);

@@ -162,30 +162,30 @@ get_header();
                 <p class="text-1"><?= text_br(get_theme_mod('recent_publications_description')); ?> </p>
             </div>
             <div class="cards p-56">
-                <div class="card">
+                <article class="card">
                     <a href="#" class="card-image" style="background: url('https://get.pxhere.com/photo/tree-nature-forest-branch-winter-plant-wood-leaf-green-grow-evergreen-fir-christmas-tree-twig-conifer-spruce-needles-periwinkle-of-course-larch-pine-cones-pine-needles-needle-branch-tannenzweig-plant-stem-woody-plant-land-plant-arecales-palm-family-582573.jpg')"></a>
                     <a href="#" class="card-text-block">
                         <h3 class="headline-3 card-title">Расширение нашего ассортимента новыми позициями</h3>
                         <p class="text-1 card-description">Новые позиции отражают последние тенденции и ожидания клиентов, подчёркивая прогрессивный подход компании к развитию бизнеса.</p>
                         <span class="text-2 card-date">28.10</span>
                     </a>
-                </div>
-                <div class="card">
+                </article>
+                <article class="card">
                     <a href="#" class="card-image" style="background: url('https://get.pxhere.com/photo/tree-nature-forest-branch-winter-plant-wood-leaf-green-grow-evergreen-fir-christmas-tree-twig-conifer-spruce-needles-periwinkle-of-course-larch-pine-cones-pine-needles-needle-branch-tannenzweig-plant-stem-woody-plant-land-plant-arecales-palm-family-582573.jpg')"></a>
                     <a href="#" class="card-text-block">
                         <h3 class="headline-3 card-title">Расширение нашего ассортимента новыми позициями</h3>
                         <p class="text-1 card-description">Новые позиции отражают последние тенденции и ожидания клиентов, подчёркивая прогрессивный подход компании к развитию бизнеса.</p>
                         <span class="text-2 card-date">28.10</span>
                     </a>
-                </div>
-                <div class="card">
+                </article>
+                <article class="card">
                     <a href="#" class="card-image" style="background: url('https://get.pxhere.com/photo/tree-nature-forest-branch-winter-plant-wood-leaf-green-grow-evergreen-fir-christmas-tree-twig-conifer-spruce-needles-periwinkle-of-course-larch-pine-cones-pine-needles-needle-branch-tannenzweig-plant-stem-woody-plant-land-plant-arecales-palm-family-582573.jpg')"></a>
                     <a href="#" class="card-text-block">
                         <h3 class="headline-3 card-title">Расширение нашего ассортимента новыми позициями</h3>
                         <p class="text-1 card-description">Новые позиции отражают последние тенденции и ожидания клиентов, подчёркивая прогрессивный подход компании к развитию бизнеса.</p>
                         <span class="text-2 card-date">28.10</span>
                     </a>
-                </div>
+                </article>
 
             </div>
             <?= button_brown(get_theme_mod('base_products_url'), 'Перейти в медиа') ?>

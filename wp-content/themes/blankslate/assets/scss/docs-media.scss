@@ -1,0 +1,22 @@
+.documents {
+    .headline {
+        margin-bottom: 5.6rem;
+    }
+
+    .main-content {
+        display: flex;
+        justify-content: space-between;
+        gap: 2.4rem;
+    }
+}
+
+.media {
+    .headline {
+        display: flex;
+        justify-content: space-between;
+
+        .text-1 {
+            width: 52.6rem;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+ .career {
+     .content {
+         display: grid;
+         grid-template-columns: 1fr 63.6rem;
+         grid-template-rows: auto auto;
+     }
+
+     .left-side {
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+         gap: 4rem;
+         max-width: 41.6rem;
+     }
+
+     .medium-img {
+         width: 63.6rem;
+         height: 36.4rem;
+
+         border-radius: $border;
+         @extend .image-cover;
+     }
+
+     .left-text {
+         max-width: 52.6rem;
+         margin-top: 7.2rem;
+     }
+
+     .right-text {
+         margin-top: 7.2rem;
+     }
+ }

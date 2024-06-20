@@ -10,6 +10,10 @@
 @import 'quality.scss';
 @import 'faq.scss';
 @import 'eco.scss';
+@import 'docs-media.scss';
+@import 'contacts.scss';
+@import 'career.scss';
+@import 'single.scss';
 
 * {
     margin: 0;
@@ -313,4 +317,159 @@ a {
     span {
         color: $white;
     }
+}
+
+.accordion {
+    max-width: 100%;
+    flex-grow: 1;
+
+    section:last-child {
+        border-bottom: 0.1rem solid $gray;
+    }
+
+    span.circle {
+        transition: $transition;
+        width: 4rem;
+        height: 4rem;
+        display: block;
+        position: absolute;
+        background: transparent;
+        right: 0;
+        top: 50%;
+        margin-top: -2rem;
+        border-radius: 50%;
+        z-index: -1;
+    }
+
+    &-doc {
+        color: $dark;
+        padding: 0.6rem 0;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        transition: $transition;
+
+        &:hover {
+            span.ico-doc {
+                background: $brown;
+            }
+
+            path {
+                stroke: $white;
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 3.2rem;
+        }
+    }
+
+    span.ico-doc {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        transition: $transition;
+        width: 4rem;
+        height: 4rem;
+        background: transparent;
+        border-radius: 3.2rem;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+        padding: 1rem;
+        text-align: center;
+    }
+}
+
+.accordion__heading {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    padding: 3.6rem 0;
+    margin: 0;
+    color: $dark;
+    border-top: 0.1rem solid $gray;
+    border-color: $gray;
+
+    &:hover {
+        span.circle {
+            background: $brown;
+        }
+    }
+
+    &:hover:after,
+    &:hover:before {
+        background: $white;
+    }
+
+    &:after,
+    &:before {
+        content: "";
+        position: absolute;
+        width: 1.6rem;
+        height: 0.3rem;
+        top: 50%;
+        right: 1.2rem;
+        background: $primary;
+        transition: all 0.1s;
+        margin-top: -0.15rem;
+    }
+
+    &:after {
+        transform: rotate(90deg);
+        transition: all 0.1s;
+    }
+}
+
+.accordion__checkbox {
+    display: none;
+    position: absolute;
+    left: -9999em;
+
+    &:checked~.accordion__heading:before {
+        transform: rotate(90deg);
+        opacity: 0;
+        transition: all 0.1s;
+    }
+
+    &:checked~.accordion__heading:after {
+        transform: rotate(180deg);
+    }
+
+    &:checked~.accordion__content {
+        max-height: 100rem;
+        transition: all 2s;
+    }
+}
+
+.accordion__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    .text-2 {
+        padding-bottom: 3.6rem;
+    }
+}
+
+.card-form {
+    display: flex;
+    flex-direction: column;
+    padding: 3.2rem 5.5rem;
+    gap: 2.4rem;
+    width: 41.6rem;
+    height: 25.2rem;
+    background: $bg;
+    border: 0.1rem solid #BFBFBF;
+    backdrop-filter: blur(2.5rem);
+    border-radius: 0.8rem;
+    justify-content: center;
+}
+
+.cards .card-form {
+    height: 100%;
 }

@@ -1,0 +1,30 @@
+.contacts {
+    .content {
+        display: flex;
+        justify-content: space-between;
+        gap: 2.4rem;
+    }
+
+    .left-side {
+        .headline-2 {
+            margin-bottom: 4rem;
+        }
+
+        .contact {
+            display: flex;
+            flex-direction: column;
+            gap: 2.4rem;
+
+            width: 41.6rem;
+        }
+    }
+
+    .right-side {
+        width: 100%;
+
+        iframe {
+            border-radius: $border !important;
+            height: 100% !important;
+        }
+    }
+}
