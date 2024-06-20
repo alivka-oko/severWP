@@ -5,9 +5,40 @@
             <?= get_template_part('breadcrumb') ?>
         </div>
     </section>
-    <section class="section headline">
+    <section class="section product-main">
         <div class="content">
-            <h1 class="headline-2"><?= the_title() ?></h1>
+            <div class="left-side">
+                <h1 class="headline-2"><?= the_title() ?></h1>
+                <?= the_content() ?>
+                <?= button_brown('#', 'Задать вопрос') ?>
+            </div>
+            <div class="right-side">
+                <div class="swiper swiper-product">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><a href="https://teh-dom.ru/upload/images/old/13121.jpg"
+                                class="glightbox" data-gallery="myGallery">
+                                <img src="https://teh-dom.ru/upload/images/old/13121.jpg" alt="Image 1 description">
+                            </a>
+                        </div>
+                        <div class="swiper-slide"><a
+                                href="https://teplo4life.ru/wp-content/uploads/2021/11/woodpellets1-1200x800-1.jpg"
+                                class="glightbox" data-gallery="myGallery">
+                                <img src="https://teplo4life.ru/wp-content/uploads/2021/11/woodpellets1-1200x800-1.jpg"
+                                    alt="Image 1 description">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper swiper-thumbnail"> <!-- added-->
+                    <div class="swiper-wrapper"> <!-- added-->
+                        <div class="swiper-slide"><img src="https://teh-dom.ru/upload/images/old/13121.jpg"></div>
+                        <!-- added-->
+                        <div class="swiper-slide"><img
+                                src="https://teplo4life.ru/wp-content/uploads/2021/11/woodpellets1-1200x800-1.jpg">
+                        </div> <!-- added-->
+                    </div> <!-- added-->
+                </div>
+            </div>
         </div>
     </section>
     <section class="section main-content p-56-0">
