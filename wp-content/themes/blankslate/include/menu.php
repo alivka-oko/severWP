@@ -11,6 +11,7 @@ function register_additional_menus()
             'products' => 'Продукция',
             'information' => 'Информация',
             'contacts' => 'Контакты',
+            'product' => 'На странице продукта',
         )
     );
 }

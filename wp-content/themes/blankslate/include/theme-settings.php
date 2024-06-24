@@ -70,3 +70,53 @@ function getWordForm($n, $titles)
     $cases = array(2, 0, 1, 1, 1, 2);
     return $titles[($n % 100 > 4 && $n % 100 < 20) ? 2 : $cases[min($n % 10, 5)]];
 }
+
+function transform_mini_block($input)
+{
+    // Регулярное выражение для поиска цифры и текста
+    $pattern = '/([><=]*)(\d+)(.*)/';
+
+    // Замена совпадений с помощью preg_replace_callback
+    $output = preg_replace_callback($pattern, function ($matches) {
+        $sign = $matches[1];
+        $number = $matches[2];
+        $text = $matches[3];
+
+        // Формирование HTML-кода в соответствии с правилами
+        $output = '<div class="mini-block wow animate__animated animate__fadeInLeft">';
+        $output .= '<span class="headline-3">' . htmlspecialchars($sign) . '</span>';
+        $output .= '<span class="headline-2">' . htmlspecialchars($number) . '</span>';
+        $output .= '<span class="text-2">' . htmlspecialchars($text) . '</span>';
+        $output .= '</div>';
+
+        return $output;
+    }, $input);
+
+    return $output;
+}
+function miniBlock($text)
+{
+    // Регулярное выражение для поиска чисел с символами перед ними
+    $pattern1 = '/([><=!]+)\s*(\d+)/';
+
+    // Регулярное выражение для поиска чисел с символами после них
+    $pattern2 = '/(\d+)\s*([+-])/';
+
+    // Регулярное выражение для поиска всего текста после цифр
+    $pattern3 = '/(\d+\s+.*)/';
+
+    // Заменяем числа с символами перед ними
+    $text = preg_replace($pattern1, '<span class="headline-3">$1</span><span class="headline-2">$2</span>', $text);
+
+    // Заменяем числа с символами после них
+    $text = preg_replace($pattern2, '<span class="headline-2">$1$2</span>', $text);
+
+    // Заменяем весь текст после цифр
+    $text = preg_replace($pattern3, '<span class="text-2">$1</span>', $text);
+
+    return '<div class="mini-block wow animate__animated animate__fadeInRight">' . $text . '</div>';
+}
+
+
+
+?>

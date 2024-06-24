@@ -8,7 +8,7 @@
 @import 'home.scss';
 @import 'about.scss';
 @import 'quality.scss';
-@import 'faq.scss';
+@import 'faq-product.scss';
 @import 'eco.scss';
 @import 'docs-media.scss';
 @import 'contacts.scss';
@@ -44,9 +44,12 @@ body {
     position: relative;
 }
 
-ul,
-li {
+ul li {
     list-style: none;
+}
+
+li {
+    list-style-position: inside;
 }
 
 img,
@@ -302,7 +305,7 @@ a {
     justify-content: center;
     align-items: center;
     padding: 3.2rem;
-    gap: 3.2rem;
+    gap: 1.6rem;
 
     color: $white;
 
@@ -314,9 +317,12 @@ a {
     backdrop-filter: blur(2.5rem);
     border-radius: $border;
 
+    @extend .text-2;
+
     span {
         color: $white;
     }
+
 }
 
 .accordion {
@@ -379,6 +385,34 @@ a {
         flex-grow: 0;
         padding: 1rem;
         text-align: center;
+    }
+
+    p.specification {
+        color: $dark;
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: 2fr 5fr;
+        padding: 0;
+
+        .value {
+            color: $darkgray;
+        }
+    }
+
+    .specifications {
+        p.specification:nth-last-child(1) {
+            margin-bottom: 3.24rem;
+        }
+    }
+
+    .name-signature {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .name {
+        text-transform: uppercase;
+        line-height: 2rem;
     }
 }
 

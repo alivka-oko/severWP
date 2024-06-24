@@ -12,8 +12,8 @@
                 <?php else: ?>
                     <a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
                 <?php endif; ?>
-                <p class="text-1">186424, Костомукша, республика Карелия</p>
-                <a href="tel:1234" class="headline-3 phone">+7 499 841-84-00</a>
+                <p class="text-1"><?= get_theme_mod('main_info_postcode'); ?></p>
+                <a href="tel:1234" class="headline-3 phone"><?= get_theme_mod('main_info_phone'); ?></a>
             </div>
             <div class="menus">
                 <div class="col">
@@ -63,13 +63,14 @@
                     <ul class="menu text-2">
                         <li id="menu-item-106"
                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-106"><a
-                                href="mailto:mail@north.com" class="link">mail@north.com</a></li>
+                                href="mailto:<?= get_theme_mod('main_info_email'); ?>" class="link"><?= get_theme_mod('main_info_email'); ?></a>
+                        </li>
                         <li id="menu-item-107"
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-107"><a href="#"
-                                class="link">Вконтакте</a></li>
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-107"><a
+                                href="<?= get_theme_mod('social_link_vk'); ?>" class="link">Вконтакте</a></li>
                         <li id="menu-item-108"
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-108"><a href="#"
-                                class="link">Youtube</a></li>
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-108"><a
+                                href="<?= get_theme_mod('social_link_youtube'); ?>" class="link">Youtube</a></li>
                     </ul>
                 </div>
             </div>
@@ -82,11 +83,13 @@
         <div class="bottom-content">
             <div id="copyright" class="text-2">
                 &copy; <?php echo esc_html(date_i18n(__('Y', 'blankslate'))); ?>
-                <?php echo esc_html(get_bloginfo('name')); ?>
+                <?= get_theme_mod('main_info_copyright'); ?>
             </div>
             <div class="policy">
-                <a href="#" class="text-2 link">Пользовательское соглашение</a>
-                <a href="#" class="text-2 link">Политика конфиденциальности</a>
+                <a href="<?= get_theme_mod('main_info_terms_link'); ?>" class="text-2 link">Пользовательское
+                    соглашение</a>
+                <a href="<?= get_theme_mod('main_info_privacy_policy_link'); ?>" class="text-2 link">Политика
+                    конфиденциальности</a>
             </div>
         </div>
     </div>

@@ -31,73 +31,43 @@ get_header();
             </p>
         </div>
     </section>
-    <section class="section faqs p-0-140">
-        <div class="content">
-            <div class="accordion">
-                <section>
-                    <input type="checkbox" class="accordion__checkbox" id="accordion-heading-1">
-                    <label class="accordion__heading headline-3" for="accordion-heading-1">Какие виды
-                        деревообрабатывающих услуг вы предоставляете? <span class="circle"></span></label>
-                    <div class="accordion__content">
-                        <p class="text-2">Наша компания предоставляет широкий спектр деревообрабатывающих услуг, включая
-                            резку, строгание, фрезеровку и шлифовку древесины. Мы используем только высококачественные
-                            материалы и современное оборудование для обработки древесины, гарантируя надежность и
-                            долговечность наших изделий. Кроме того, мы имеем все необходимые сертификаты качества и
-                            награды, подтверждающие нашу репутацию как надежного партнера в сфере деревообработки.</p>
-                    </div>
-                </section>
-
-                <section>
-                    <input type="checkbox" class="accordion__checkbox" id="accordion-heading-2">
-                    <label class="accordion__heading headline-3" for="accordion-heading-2">Какие виды
-                        деревообрабатывающих услуг вы предоставляете?<span class="circle"></span></label>
-                    <div class="accordion__content">
-                        <p class="text-2">Наша компания предоставляет широкий спектр деревообрабатывающих услуг, включая
-                            резку, строгание, фрезеровку и шлифовку древесины. Мы используем только высококачественные
-                            материалы и современное оборудование для обработки древесины, гарантируя надежность и
-                            долговечность наших изделий. Кроме того, мы имеем все необходимые сертификаты качества и
-                            награды, подтверждающие нашу репутацию как надежного партнера в сфере деревообработки.</p>
-                    </div>
-                </section>
-
-                <section>
-                    <input type="checkbox" class="accordion__checkbox" id="accordion-heading-3">
-                    <label class="accordion__heading headline-3" for="accordion-heading-3">Какие виды
-                        деревообрабатывающих услуг вы предоставляете?<span class="circle"></span></label>
-                    <div class="accordion__content">
-                        <p class="text-2">Наша компания предоставляет широкий спектр деревообрабатывающих услуг, включая
-                            резку, строгание, фрезеровку и шлифовку древесины. Мы используем только высококачественные
-                            материалы и современное оборудование для обработки древесины, гарантируя надежность и
-                            долговечность наших изделий. Кроме того, мы имеем все необходимые сертификаты качества и
-                            награды, подтверждающие нашу репутацию как надежного партнера в сфере деревообработки.</p>
-                    </div>
-                </section>
-
+    <?php
+    $career = CFS()->get('career');
+    if ($career): ?>
+        <section class="section faqs p-0-140">
+            <div class="content">
+                <div class="accordion">
+                    <?php foreach ($career as $item): ?>
+                        <section>
+                            <input type="checkbox" class="accordion__checkbox" id="accordion-heading-1">
+                            <label class="accordion__heading headline-3" for="accordion-heading-1"><?= $item['name'] ?> <span
+                                    class="circle"></span></label>
+                            <div class="accordion__content">
+                                <p class="text-2"><?= $item['description'] ?></p>
+                            </div>
+                        </section>
+                    <?php endforeach; ?>
+                </div>
+                <div class="mini-block wow animate__animated animate__fadeInLeft"><span class="headline-3">></span><span
+                        class="headline-2">50</span><span class="text-2">видов
+                        деревьев</span></div>
             </div>
-            <div class="mini-block wow animate__animated animate__fadeInLeft"><span class="headline-3">></span><span
-                    class="headline-2">50</span><span class="text-2">видов
-                    деревьев</span></div>
-        </div>
-    </section>
-    <section class="section uniq p-140">
-        <div class="content">
-            <div class="cards">
-                <div class="card">
-                    <h3 class="headline-3">Стойкость</h3>
-                    <p class="text-2">Деревья в Карельском лесу могут достигать возрастов, превышающих 500 лет</p>
-                </div>
-                <div class="card">
-                    <h3 class="headline-3">Соответствие стандартам</h3>
-                    <p class="text-2">Сертифицировано по стандартам FSC и PEFC, выращено и обработана с учетом
-                        аспектов устойчивого лесоуправления</p>
-                </div>
-                <div class="card">
-                    <h3 class="headline-3">Звукоизоляция</h3>
-                    <p class="text-2">Древесина обладает звукоизоляционными свойствами, поглощая шум и создавая
-                        комфортную акустическую обстановку</p>
+        </section>
+    <?php endif; ?>
+    <?php
+    $cards = CFS()->get('cards');
+    if ($cards): ?>
+        <section class="section uniq p-140">
+            <div class="content">
+                <div class="cards">
+                    <?php foreach ($cards as $item): ?>
+                        <div class="card"> 
+                            <h3 class="headline-3"><?= $item['title'] ?></h3>
+                            <p class="text-2"><?= $item['description'] ?></p>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
-        </div>
-    </section>
-
+        </section>
+    <?php endif; ?>
     <?php get_footer(); ?>

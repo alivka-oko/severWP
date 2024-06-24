@@ -12,64 +12,43 @@ get_header();
         <div class="content">
             <div class="left-side">
                 <h1 class="headline-2"><?= single_cat_title() ?></h1>
-                <p class="text-1">Ниже расположены ответы на самые часто задаваемые вопросы. Если вы не нашли нужный
-                    ответ, то нажмите кнопку задать вопрос и заполните форму или свяжитесь с нами по почте
-                    mail@north.com или по телефону +7 499 841-84-00</p>
+                <div class="text-1"><?= text_br(category_description()) ?></div>
                 <?= button_brown('#', 'Задать вопрос') ?>
             </div>
             <div class="right-side">
-                <div class="img"
-                    style="background: url(<?php echo esc_url(get_theme_mod('quality_section_2_bg_image')); ?>);"></div>
+                <?php if (function_exists('z_taxonomy_image'))
+                    z_taxonomy_image(); ?>
             </div>
         </div>
     </section>
-    <section class="section catalog-products p-0-140">
-        <div class="content">
-            <div class="cards p-56">
-                <a href="#" class="card"
-                    style="background:url('https://get.pxhere.com/photo/tree-nature-forest-branch-winter-plant-wood-leaf-green-grow-evergreen-fir-christmas-tree-twig-conifer-spruce-needles-periwinkle-of-course-larch-pine-cones-pine-needles-needle-branch-tannenzweig-plant-stem-woody-plant-land-plant-arecales-palm-family-582573.jpg')">
-                    <?= button_long('', 'Деревянная доска для пола') ?>
-                </a>
-                <a href="#" class="card"
-                    style="background:url('https://i.sdvk-oboi.ru/i/Antimarker/Antimarker/85964.jpg')">
-                    <?= button_long('', 'Деревянная доска для пола') ?>
-                </a>
-                <a href="#" class="card"
-                    style="background:url('https://get.pxhere.com/photo/tree-nature-forest-branch-winter-plant-wood-leaf-green-grow-evergreen-fir-christmas-tree-twig-conifer-spruce-needles-periwinkle-of-course-larch-pine-cones-pine-needles-needle-branch-tannenzweig-plant-stem-woody-plant-land-plant-arecales-palm-family-582573.jpg')">
-                    <?= button_long('', 'Деревянная доска для пола') ?>
-                </a>
-                <a href="#" class="card"
-                    style="background:url('https://get.pxhere.com/photo/tree-nature-forest-branch-winter-plant-wood-leaf-green-grow-evergreen-fir-christmas-tree-twig-conifer-spruce-needles-periwinkle-of-course-larch-pine-cones-pine-needles-needle-branch-tannenzweig-plant-stem-woody-plant-land-plant-arecales-palm-family-582573.jpg')">
-                    <?= button_long('', 'Деревянная доска для пола') ?>
-                </a>
-                <a href="#" class="card"
-                    style="background:url('https://get.pxhere.com/photo/tree-nature-forest-branch-winter-plant-wood-leaf-green-grow-evergreen-fir-christmas-tree-twig-conifer-spruce-needles-periwinkle-of-course-larch-pine-cones-pine-needles-needle-branch-tannenzweig-plant-stem-woody-plant-land-plant-arecales-palm-family-582573.jpg')">
-                    <?= button_long('', 'Деревянная доска для пола') ?>
-                </a>
-                <a href="#" class="card"
-                    style="background:url('https://get.pxhere.com/photo/tree-nature-forest-branch-winter-plant-wood-leaf-green-grow-evergreen-fir-christmas-tree-twig-conifer-spruce-needles-periwinkle-of-course-larch-pine-cones-pine-needles-needle-branch-tannenzweig-plant-stem-woody-plant-land-plant-arecales-palm-family-582573.jpg')">
-                    <?= button_long('', 'Деревянная доска для пола') ?>
-                </a>
-                <a href="#" class="card"
-                    style="background:url('https://get.pxhere.com/photo/tree-nature-forest-branch-winter-plant-wood-leaf-green-grow-evergreen-fir-christmas-tree-twig-conifer-spruce-needles-periwinkle-of-course-larch-pine-cones-pine-needles-needle-branch-tannenzweig-plant-stem-woody-plant-land-plant-arecales-palm-family-582573.jpg')">
-                    <?= button_long('', 'Деревянная доска для пола') ?>
-                </a>
-                <a href="#" class="card"
-                    style="background:url('https://get.pxhere.com/photo/tree-nature-forest-branch-winter-plant-wood-leaf-green-grow-evergreen-fir-christmas-tree-twig-conifer-spruce-needles-periwinkle-of-course-larch-pine-cones-pine-needles-needle-branch-tannenzweig-plant-stem-woody-plant-land-plant-arecales-palm-family-582573.jpg')">
-                    <?= button_long('', 'Деревянная доска для пола') ?>
-                </a>
-                <div class="card-form">
-                    <h3 class="headline-3">Нужна консультация?</h3>
-                    <p class="text-2">Уточнить цену и другие параметры вы можете у наших менеджеров.</p>
-                    <?= button_brown('#', 'Оставить заявку') ?>
+    <?php
+    // Проверяем, есть ли посты
+    if (have_posts()):
+        ?>
+        <section class="section catalog-products p-0-140">
+            <div class="content">
+                <div class="cards p-56">
+                    <?php
+                    while (have_posts()):
+                        the_post();
+                        ?>
+                        <a href="<?= the_permalink() ?>" class="card"
+                            style="background:url('<?= get_the_post_thumbnail_url() ?>')">
+                            <?= button_long('', get_the_title()) ?>
+                        </a>
+                        <?php
+                    endwhile;
+                    ?>
+                    <?= get_template_part('consultation') ?>
                 </div>
             </div>
-            <?= button_brown(get_theme_mod('base_products_url'), 'Полный каталог') ?>
-        </div>
-    </section>
+        </section>
+        <?php
+    endif; // Завершаем проверку наличия постов
+    ?>
 
     <section class="section contact-form p-140-0"
-        style="background: url(<?php echo esc_url(get_theme_mod('contact_form_image')); ?>);">
+        style="background: url(<?php echo esc_url(get_theme_mod('contact_form_image2')); ?>);">
         <div class="content">
             <div class="text-block">
                 <h2 class="headline-2 wow animate__animated animate__fadeIn"><?= get_theme_mod('contact_form_title') ?>

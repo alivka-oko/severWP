@@ -30,6 +30,6 @@
                     ])
                     ?>
                 </ul>
-                <div class="phone headline-3">+79999999</div>
+                <div class="phone headline-3"><?= get_theme_mod('main_info_phone'); ?></div>
             </div>
         </header>

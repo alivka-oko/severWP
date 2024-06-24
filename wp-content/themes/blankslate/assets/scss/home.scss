@@ -246,7 +246,8 @@
 }
 
 .base-products,
-.catalog-products {
+.catalog-products,
+.recent-publications {
     .top-content {
         display: flex;
         justify-content: space-between;
@@ -260,6 +261,10 @@
             max-width: 41.6rem;
         }
     }
+}
+
+.base-products,
+.catalog-products {
 
     .cards {
         display: grid;
@@ -274,7 +279,7 @@
             height: 28.8rem;
             border-radius: $border;
 
-            background-size: 110% !important; // Начальное значение background-size
+            background-size: 120% !important; // Начальное значение background-size
             background-repeat: no-repeat !important;
             background-position: center !important;
 
@@ -422,7 +427,7 @@
                 height: 27.6rem;
                 display: block;
                 background-position: center !important;
-                background-size: 110% !important;
+                background-size: 120% !important;
                 border-radius: $border;
                 margin-bottom: 2.4rem;
             }

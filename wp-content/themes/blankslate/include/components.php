@@ -61,7 +61,7 @@ function button_white($url, $input)
 
 function doc_icon()
 {
-    return '<svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    return '<svg viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M14 6.2L9.88571 10M9.88571 10L6 6.4M9.88571 10V0" stroke="#204E4A" stroke-width="2"/>
 <path d="M1 9V15H19V9" stroke="#204E4A" stroke-width="2"/>
 </svg>';
