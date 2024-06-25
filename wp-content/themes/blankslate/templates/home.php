@@ -85,7 +85,7 @@ get_header();
                         <p class="headline-3"><?= get_theme_mod('best_quality_word1') ?></p>
                         <p class="headline-3"><?= get_theme_mod('best_quality_word3') ?></p>
                         <p class="headline-3"><?= get_theme_mod('best_quality_word2') ?></p>
-                        <?= button_brown('#', 'Подробнее') ?>
+                        <?= button_brown(get_theme_mod('best_quality_link'), 'Подробнее') ?>
                     </div>
                 </div>
                 <div class="right-side">
@@ -114,32 +114,32 @@ get_header();
                     </p>
                 </div>
             </div>
-            <div class="cards p-56">
-                <a href="#" class="card"
-                    style="background:url('https://get.pxhere.com/photo/tree-nature-forest-branch-winter-plant-wood-leaf-green-grow-evergreen-fir-christmas-tree-twig-conifer-spruce-needles-periwinkle-of-course-larch-pine-cones-pine-needles-needle-branch-tannenzweig-plant-stem-woody-plant-land-plant-arecales-palm-family-582573.jpg')">
-                    <?= button_long('', 'Деревянная доска для пола') ?>
-                </a>
-                <a href="#" class="card"
-                    style="background:url('https://i.sdvk-oboi.ru/i/Antimarker/Antimarker/85964.jpg')">
-                    <?= button_long('', 'Деревянная доска для пола') ?>
-                </a>
-                <a href="#" class="card"
-                    style="background:url('https://get.pxhere.com/photo/tree-nature-forest-branch-winter-plant-wood-leaf-green-grow-evergreen-fir-christmas-tree-twig-conifer-spruce-needles-periwinkle-of-course-larch-pine-cones-pine-needles-needle-branch-tannenzweig-plant-stem-woody-plant-land-plant-arecales-palm-family-582573.jpg')">
-                    <?= button_long('', 'Деревянная доска для пола') ?>
-                </a>
-                <a href="#" class="card"
-                    style="background:url('https://get.pxhere.com/photo/tree-nature-forest-branch-winter-plant-wood-leaf-green-grow-evergreen-fir-christmas-tree-twig-conifer-spruce-needles-periwinkle-of-course-larch-pine-cones-pine-needles-needle-branch-tannenzweig-plant-stem-woody-plant-land-plant-arecales-palm-family-582573.jpg')">
-                    <?= button_long('', 'Деревянная доска для пола') ?>
-                </a>
-                <a href="#" class="card"
-                    style="background:url('https://get.pxhere.com/photo/tree-nature-forest-branch-winter-plant-wood-leaf-green-grow-evergreen-fir-christmas-tree-twig-conifer-spruce-needles-periwinkle-of-course-larch-pine-cones-pine-needles-needle-branch-tannenzweig-plant-stem-woody-plant-land-plant-arecales-palm-family-582573.jpg')">
-                    <?= button_long('', 'Деревянная доска для пола') ?>
-                </a>
-                <a href="#" class="card"
-                    style="background:url('https://get.pxhere.com/photo/tree-nature-forest-branch-winter-plant-wood-leaf-green-grow-evergreen-fir-christmas-tree-twig-conifer-spruce-needles-periwinkle-of-course-larch-pine-cones-pine-needles-needle-branch-tannenzweig-plant-stem-woody-plant-land-plant-arecales-palm-family-582573.jpg')">
-                    <?= button_long('', 'Деревянная доска для пола') ?>
-                </a>
-            </div>
+            <?php
+            $args = array(
+                'category_name' => 'catalog',    // Категория: catalog
+                'post__in' => get_option('sticky_posts'),    // Только закрепленные записи
+                'orderby' => 'date',    // От новых к старым
+                'order' => 'DESC',    // От новых к старым
+                'posts_per_page' => 6    // Максимум 6 записей
+            );
+            query_posts($args);
+            // Цикл WordPress
+            if (have_posts()) { ?>
+                <div class="cards p-56">
+                    <?php
+                    while (have_posts()) {
+                        the_post(); ?>
+                        <a href="<?= the_permalink() ?>" class="card"
+                            style="background:url('<?= get_the_post_thumbnail_url() ?>')">
+                            <?= button_long('', get_the_title()) ?>
+                        </a>
+                        <?php
+                    } ?>
+                </div>
+                <?php
+                wp_reset_query();
+            }
+            ?>
             <?= button_brown(get_theme_mod('base_products_url'), 'Полный каталог') ?>
         </div>
     </section>
@@ -172,7 +172,7 @@ get_header();
                 <img src="<?= get_theme_mod('mini-logo') ?>" alt="логотип">
                 <h2 class="headline-2 wow animate__animated animate__fadeIn"><?= get_theme_mod('career_title') ?></h2>
                 <p class="text-1"><?= get_theme_mod('career_description') ?></p>
-                <?= button_white('#', 'Посмотреть вакансии') ?>
+                <?= button_white(get_theme_mod('career_miniblock-url'), 'Посмотреть вакансии') ?>
             </div>
         </div>
     </section>
@@ -186,40 +186,42 @@ get_header();
                     <p class="text-1"><?= text_br(get_theme_mod('recent_publications_description')); ?> </p>
                 </div>
             </div>
-            <div class="cards p-56">
-                <article class="card">
-                    <a href="#" class="card-image"
-                        style="background: url('https://get.pxhere.com/photo/tree-nature-forest-branch-winter-plant-wood-leaf-green-grow-evergreen-fir-christmas-tree-twig-conifer-spruce-needles-periwinkle-of-course-larch-pine-cones-pine-needles-needle-branch-tannenzweig-plant-stem-woody-plant-land-plant-arecales-palm-family-582573.jpg')"></a>
-                    <a href="#" class="card-text-block">
-                        <h3 class="headline-3 card-title">Расширение нашего ассортимента новыми позициями</h3>
-                        <p class="text-1 card-description">Новые позиции отражают последние тенденции и ожидания
-                            клиентов, подчёркивая прогрессивный подход компании к развитию бизнеса.</p>
-                        <span class="text-2 card-date">28.10</span>
-                    </a>
-                </article>
-                <article class="card">
-                    <a href="#" class="card-image"
-                        style="background: url('https://get.pxhere.com/photo/tree-nature-forest-branch-winter-plant-wood-leaf-green-grow-evergreen-fir-christmas-tree-twig-conifer-spruce-needles-periwinkle-of-course-larch-pine-cones-pine-needles-needle-branch-tannenzweig-plant-stem-woody-plant-land-plant-arecales-palm-family-582573.jpg')"></a>
-                    <a href="#" class="card-text-block">
-                        <h3 class="headline-3 card-title">Расширение нашего ассортимента новыми позициями</h3>
-                        <p class="text-1 card-description">Новые позиции отражают последние тенденции и ожидания
-                            клиентов, подчёркивая прогрессивный подход компании к развитию бизнеса.</p>
-                        <span class="text-2 card-date">28.10</span>
-                    </a>
-                </article>
-                <article class="card">
-                    <a href="#" class="card-image"
-                        style="background: url('https://get.pxhere.com/photo/tree-nature-forest-branch-winter-plant-wood-leaf-green-grow-evergreen-fir-christmas-tree-twig-conifer-spruce-needles-periwinkle-of-course-larch-pine-cones-pine-needles-needle-branch-tannenzweig-plant-stem-woody-plant-land-plant-arecales-palm-family-582573.jpg')"></a>
-                    <a href="#" class="card-text-block">
-                        <h3 class="headline-3 card-title">Расширение нашего ассортимента новыми позициями</h3>
-                        <p class="text-1 card-description">Новые позиции отражают последние тенденции и ожидания
-                            клиентов, подчёркивая прогрессивный подход компании к развитию бизнеса.</p>
-                        <span class="text-2 card-date">28.10</span>
-                    </a>
-                </article>
+            <?php
+            $args2 = array(
+                'category_name' => 'media',    // Категория: catalog
+                'orderby' => 'date',    // От новых к старым
+                'order' => 'DESC',    // От новых к старым
+                'posts_per_page' => 3    // Максимум 6 записей
+            );
+            // Запрос. $args - параметры запроса
+            query_posts($args2);
 
-            </div>
-            <?= button_brown(get_theme_mod('base_products_url'), 'Перейти в медиа') ?>
+            // Цикл WordPress
+            if (have_posts()) {
+                ?>
+                <div class="cards p-56">
+                    <?php
+                    while (have_posts()) {
+                        the_post(); ?>
+                        <article class="card">
+                            <a href="<?= the_permalink() ?>" class="card-image"
+                                style="background: url('<?= get_the_post_thumbnail_url() ?>')"></a>
+                            <a href="<?= the_permalink() ?>" class="card-text-block">
+                                <h3 class="headline-3 card-title"><?= get_the_title() ?></h3>
+                                <div class="text-1 card-description"><?= the_excerpt() ?></div>
+                                <span class="text-2 card-date"><?= the_date('d.m') ?></span>
+                            </a>
+                        </article>
+                        <?php
+                    } ?>
+                </div>
+                <?php
+                wp_reset_query();
+            } else {
+                // текст/код, если постов нет
+            }
+            ?>
+            <?= button_brown(get_theme_mod('recent_publications_miniblock'), 'Перейти в медиа') ?>
         </div>
     </section>
     <section class="section contact-form p-140-0"

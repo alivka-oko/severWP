@@ -434,9 +434,9 @@ add_action('customize_register', function ($wp_customize) {
         )
     );
 
-    $wp_customize->add_setting('career_miniblock', array('default' => ''));
+    $wp_customize->add_setting('career_miniblock-url', array('default' => ''));
     $wp_customize->add_control(
-        'career_miniblock',
+        'career_miniblock-url',
         array(
             'label' => 'Ссылка перехода по кнопке',
             'section' => 'career_section',
@@ -994,7 +994,7 @@ add_action('customize_register', function ($wp_customize) {
         array(
             'label' => 'Описание',
             'section' => 'quality_section_3',
-            'type' => 'text',
+            'type' => 'textarea',
         )
     );
 
