@@ -1444,7 +1444,8 @@ a {
   margin: 0;
   color: #00200F;
   border-top: 0.1rem solid #BFBFBF;
-  border-color: #BFBFBF; }
+  border-color: #BFBFBF;
+  padding-right: 3.6rem; }
   .accordion__heading:hover span.circle {
     background: #A38D44; }
   .accordion__heading:hover:after, .accordion__heading:hover:before {
@@ -1502,6 +1503,44 @@ a {
 
 .cards .card-form {
   height: 100%; }
+
+.share {
+  display: flex;
+  gap: 2.4rem;
+  align-items: center;
+  transition: 0.2s ease-out;
+  margin-top: 4rem;
+  position: relative; }
+  .share-action {
+    display: flex;
+    gap: 2.4rem;
+    align-items: center; }
+  .share input[type="checkbox"] {
+    display: none; }
+  .share-buttons {
+    display: flex;
+    position: absolute;
+    left: 20rem;
+    gap: 2.4rem;
+    opacity: 0;
+    transition: 0.2s ease-out;
+    z-index: -1; }
+  .share .share-social {
+    transition: 0.2s ease-out; }
+    .share .share-social:hover {
+      scale: 1.1; }
+      .share .share-social:hover rect {
+        transition: 0.2s ease-out; }
+      .share .share-social:hover rect:nth-child(1) {
+        fill: #597da3; }
+      .share .share-social:hover rect:nth-child(2) {
+        stroke: #597da3; }
+
+.share-checkbox:checked ~ .share-buttons {
+  left: 35rem;
+  transition: 0.2s ease-out;
+  opacity: 1;
+  z-index: 1; }
 
 /*!***************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/sass-loader/dist/cjs.js!./node_modules/animate.css/animate.min.css ***!

@@ -1080,6 +1080,208 @@ add_action('customize_register', function ($wp_customize) {
             'type' => 'textarea',
         )
     );
+
+
+    // Панель "Вопросы и ответы"
+    $wp_customize->add_section(
+        'faq_section',
+        array(
+            'title' => 'Вопросы и ответы',
+            'priority' => 40,
+        )
+    );
+
+    $wp_customize->add_setting('faq_desc', array('default' => ''));
+    $wp_customize->add_control(
+        'faq_desc',
+        array(
+            'label' => 'Описание',
+            'section' => 'faq_section',
+            'type' => 'textarea',
+        )
+    );
+    $wp_customize->add_setting('faq_big_image');
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'faq_big_image',
+            array(
+                'label' => 'Изображение',
+                'section' => 'faq_section',
+            )
+        )
+    );
+    $wp_customize->add_setting('faq_mini-block', array('default' => '> 50 видов деревьев'));
+    $wp_customize->add_control(
+        'faq_mini-block',
+        array(
+            'label' => 'Мини-блок',
+            'section' => 'faq_section',
+            'type' => 'text',
+        )
+    );
+
+    // Панель "Экология"
+    $wp_customize->add_panel(
+        'ecology_panel',
+        array(
+            'title' => 'Экология',
+            'priority' => 40,
+        )
+    );
+
+    // 1 секция в панели "Экология"
+    $wp_customize->add_section(
+        'ecology_panel_1',
+        array(
+            'title' => '1 секция',
+            'panel' => 'ecology_panel',
+            'priority' => 10,
+        )
+    );
+
+    $wp_customize->add_setting('ecology_panel_1_title', array('default' => ''));
+    $wp_customize->add_control(
+        'ecology_panel_1_title',
+        array(
+            'label' => 'Заголовок',
+            'section' => 'ecology_panel_1',
+            'type' => 'text',
+        )
+    );
+
+    $wp_customize->add_setting('ecology_panel_1_desc', array('default' => ''));
+    $wp_customize->add_control(
+        'ecology_panel_1_desc',
+        array(
+            'label' => 'Описание',
+            'section' => 'ecology_panel_1',
+            'type' => 'textarea',
+        )
+    );
+
+    $wp_customize->add_setting('ecology_panel_1_image');
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'ecology_panel_1_image',
+            array(
+                'label' => 'Изображение',
+                'section' => 'ecology_panel_1',
+            )
+        )
+    );
+
+    // 2 секция в панели "Экология"
+    $wp_customize->add_section(
+        'ecology_panel_2',
+        array(
+            'title' => '2 секция',
+            'panel' => 'ecology_panel',
+            'priority' => 20,
+        )
+    );
+
+    $wp_customize->add_setting('ecology_panel_2_title', array('default' => ''));
+    $wp_customize->add_control(
+        'ecology_panel_2_title',
+        array(
+            'label' => 'Заголовок',
+            'section' => 'ecology_panel_2',
+            'type' => 'text',
+        )
+    );
+    $wp_customize->add_setting('ecology_panel_2_sub_title', array('default' => ''));
+    $wp_customize->add_control(
+        'ecology_panel_2_sub_title',
+        array(
+            'label' => 'Подзаголовок',
+            'section' => 'ecology_panel_2',
+            'type' => 'text',
+        )
+    );
+    $wp_customize->add_setting('ecology_panel_2_desc', array('default' => ''));
+    $wp_customize->add_control(
+        'ecology_panel_2_desc',
+        array(
+            'label' => 'Описание',
+            'section' => 'ecology_panel_2',
+            'type' => 'textarea',
+        )
+    );
+
+    $wp_customize->add_setting('ecology_panel_2_miniblock', array('default' => ''));
+    $wp_customize->add_control(
+        'ecology_panel_2_miniblock',
+        array(
+            'label' => 'Мини-блок',
+            'section' => 'ecology_panel_2',
+            'type' => 'text',
+        )
+    );
+
+    $wp_customize->add_setting('ecology_panel_2_left_image');
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'ecology_panel_2_left_image',
+            array(
+                'label' => 'Изображение слева',
+                'section' => 'ecology_panel_2',
+            )
+        )
+    );
+
+    $wp_customize->add_setting('ecology_panel_2_right_image');
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'ecology_panel_2_right_image',
+            array(
+                'label' => 'Изображение справа',
+                'section' => 'ecology_panel_2',
+            )
+        )
+    );
+
+    // 3 секция в панели "Экология"
+    $wp_customize->add_section(
+        'ecology_panel_3',
+        array(
+            'title' => '3 секция',
+            'panel' => 'ecology_panel',
+            'priority' => 20,
+        )
+    );
+
+    $wp_customize->add_setting('ecology_panel_3_title', array('default' => ''));
+    $wp_customize->add_control(
+        'ecology_panel_3_title',
+        array(
+            'label' => 'Заголовок',
+            'section' => 'ecology_panel_3',
+            'type' => 'text',
+        )
+    );
+    $wp_customize->add_setting('ecology_panel_3_desc', array('default' => ''));
+    $wp_customize->add_control(
+        'ecology_panel_3_desc',
+        array(
+            'label' => 'Описание',
+            'section' => 'ecology_panel_3',
+            'type' => 'textarea',
+        )
+    );
+
+    $wp_customize->add_setting('ecology_panel_3_bg');
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'ecology_panel_3_bg',
+            array(
+                'label' => 'Задний фон',
+                'section' => 'ecology_panel_3',
+            )
+        )
+    );
 });
-
-

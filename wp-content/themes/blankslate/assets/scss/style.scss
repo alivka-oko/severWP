@@ -425,6 +425,7 @@ a {
     color: $dark;
     border-top: 0.1rem solid $gray;
     border-color: $gray;
+    padding-right: 3.6rem;
 
     &:hover {
         span.circle {
@@ -506,4 +507,61 @@ a {
 
 .cards .card-form {
     height: 100%;
+}
+
+.share {
+    display: flex;
+    gap: 2.4rem;
+    align-items: center;
+    transition: $transition;
+
+    &-action {
+        display: flex;
+        gap: 2.4rem;
+        align-items: center;
+    }
+
+    margin-top: 4rem;
+    position: relative;
+
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    &-buttons {
+        display: flex;
+        position: absolute;
+        left: 20rem;
+        gap: 2.4rem;
+        opacity: 0;
+        transition: $transition;
+        z-index: -1;
+    }
+
+    .share-social {
+        transition: $transition;
+
+        &:hover {
+            scale: 1.1;
+
+            rect {
+                transition: $transition;
+            }
+
+            rect:nth-child(1) {
+                fill: #597da3;
+            }
+
+            rect:nth-child(2) {
+                stroke: #597da3;
+            }
+        }
+    }
+}
+
+.share-checkbox:checked~.share-buttons {
+    left: 35rem;
+    transition: $transition;
+    opacity: 1;
+    z-index: 1;
 }
