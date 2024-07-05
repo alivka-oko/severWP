@@ -35,7 +35,7 @@ get_header();
                                                     class="ico-doc"><?= doc_icon() ?></span><?= $doc['name'] ?></a>
                                         <?php endforeach; ?>
                                     </div>
-                                <?php endif; ?>
+                                <?php endif; ?> 
                             </section>
                         </div>
                     <?php endforeach; ?>

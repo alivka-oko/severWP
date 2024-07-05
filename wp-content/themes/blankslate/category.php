@@ -12,7 +12,7 @@ get_header();
         <div class="ellipse ellipse-brown"></div>
         <div class="ellipse ellipse-blue"></div>
         <div class="content p-20">
-            <div class="left-side">
+            <div class="left-side wow animate__animated animate__fadeIn">
                 <h1 class="headline-2"><?= single_cat_title() ?></h1>
                 <div class="text-1"><?= text_br(category_description()) ?></div>
                 <?= button_brown('#', 'Задать вопрос') ?>
@@ -53,7 +53,7 @@ get_header();
         style="background: url(<?php echo esc_url(get_theme_mod('contact_form_image2')); ?>);">
         <div class="content">
             <div class="text-block">
-                <h2 class="headline-2 wow animate__animated animate__fadeIn"><?= get_theme_mod('contact_form_title') ?>
+                <h2 class="headline-2 wow animate__animated animate__fadeInUp"><?= get_theme_mod('contact_form_title') ?>
                 </h2>
                 <p class="text-1"><?= get_theme_mod('contact_form_description') ?></p>
             </div>

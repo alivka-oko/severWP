@@ -1889,11 +1889,42 @@ ul.page-numbers {
 .burger-menu.active span:nth-child(3) {
   transform: rotate(-45deg) translate(0.5rem, -0.5rem); }
 
-li.menu-item:hover a.link {
+a.link:hover {
   color: #A38D44 !important; }
 
 .phone:hover {
   color: #A38D44 !important; }
+
+a.link.headline-3, .single-content a.link.has-medium-font-size {
+  color: #00200F; }
+
+#header #menu-block .sub-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  border: none;
+  border-radius: 0;
+  width: max-content;
+  min-width: 15rem;
+  z-index: 1000;
+  padding-top: 2rem; }
+
+#header #menu-block .menu-item-has-children:hover .sub-menu {
+  display: block; }
+
+#header #menu-block .sub-menu .menu-item {
+  background-color: #F1F0F0;
+  transition: 0.2s ease-out; }
+  #header #menu-block .sub-menu .menu-item:hover {
+    background-color: #f4f4f4; }
+  #header #menu-block .sub-menu .menu-item a.link {
+    display: block;
+    width: 100%;
+    padding: 1rem; }
+
+.menu-item {
+  position: relative; }
 
 @media (max-width: 767px) {
   .p-154 {
@@ -2167,9 +2198,19 @@ li.menu-item:hover a.link {
   #menu-block.active {
     left: 0; }
   #header ul.menu.text-2, #header #footer .col ul.menu.link, #footer .col #header ul.menu.link, #header .modal ul.menu.wpcf7-form-control-wrap.file, .modal #header ul.menu.wpcf7-form-control-wrap.file, #header ul.menu.mini-block {
-    gap: 3.6rem; }
+    gap: 1.6rem; }
   #header .phone.headline-3, #header .single-content .phone.has-medium-font-size, .single-content #header .phone.has-medium-font-size {
-    margin-left: auto; } }
+    margin-left: auto; }
+  #header #menu-block .sub-menu {
+    display: block;
+    position: revert;
+    padding-top: 0rem; }
+  #header #menu-block .sub-menu .menu-item {
+    background-color: transparent; }
+    #header #menu-block .sub-menu .menu-item:hover {
+      background-color: transparent; }
+  #header #menu-block .sub-menu .menu-item a.link::before {
+    content: '— '; } }
 
 @media (max-width: 500px) {
   .headline-1 {

@@ -47,7 +47,7 @@ get_header();
             <?php endif; ?>
         </div>
     </section>
-    <section class="section uniq main-te p-140">
+    <section class="section uniq main-te p-140 wow animate__animated animate__fadeIn">
         <div class="ellipse ellipse-brown"></div>
         <div class="content">
             <div class="top-content">
@@ -58,7 +58,7 @@ get_header();
             $cards = CFS()->get('cards');
             if ($cards): ?>
                 <div class="bottom-content">
-                    <div class="cards">
+                    <div class="cards wow animate__animated animate__fadeInUp">
                         <?php foreach ($cards as $card): ?>
                             <div class="card">
                                 <h3 class="headline-3"><?= $card['title'] ?></h3>

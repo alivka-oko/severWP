@@ -14,11 +14,11 @@
                     <a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
                 <?php endif; ?>
                 <p class="text-1"><?= get_theme_mod('main_info_postcode'); ?></p>
-                <a href="tel:<?= get_theme_mod('main_info_phone'); ?>" class="headline-3 phone"><?= get_theme_mod('main_info_phone'); ?></a>
+                <a href="tel:<?= get_theme_mod('main_info_phone'); ?>"
+                    class="headline-3 phone"><?= get_theme_mod('main_info_phone'); ?></a>
             </div>
             <div class="menus">
                 <div class="col">
-                    <h3 class="headline-3"><?= wp_get_nav_menu_name('about'); ?></h3>
                     <ul class="menu text-2">
                         <?php
                         wp_nav_menu([
@@ -27,12 +27,12 @@
                             'menu_id' => '',
                             'items_wrap' => '%3$s',
                             'add_a_class' => 'link',
+                            'add_a_first_class' => 'headline-3', // Задаем класс для первого элемента
                         ])
                             ?>
                     </ul>
                 </div>
                 <div class="col">
-                    <h3 class="headline-3"><?= wp_get_nav_menu_name('products'); ?></h3>
                     <ul class="menu text-2">
                         <?php
                         wp_nav_menu([
@@ -41,12 +41,12 @@
                             'menu_id' => '',
                             'items_wrap' => '%3$s',
                             'add_a_class' => 'link',
+                            'add_a_first_class' => 'headline-3',
                         ])
                             ?>
                     </ul>
                 </div>
                 <div class="col">
-                    <h3 class="headline-3"><?= wp_get_nav_menu_name('information'); ?></h3>
                     <ul class="menu text-2">
                         <?php
                         wp_nav_menu([
@@ -55,24 +55,35 @@
                             'menu_id' => '',
                             'items_wrap' => '%3$s',
                             'add_a_class' => 'link',
+                            'add_a_first_class' => 'headline-3',
                         ])
                             ?>
                     </ul>
                 </div>
                 <div class="col">
-                    <h3 class="headline-3">Контакты</h3>
                     <ul class="menu text-2">
-                        <li id="menu-item-106"
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-106"><a
-                                href="mailto:<?= get_theme_mod('main_info_email'); ?>"
-                                class="link"><?= get_theme_mod('main_info_email'); ?></a>
-                        </li>
-                        <li id="menu-item-107"
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-107"><a
-                                href="<?= get_theme_mod('social_link_vk'); ?>" class="link">Вконтакте</a></li>
-                        <li id="menu-item-108"
-                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-108"><a
-                                href="<?= get_theme_mod('social_link_youtube'); ?>" class="link">Youtube</a></li>
+                        <li id="menu-item-204"
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-204"><a
+                                href="http://sever/kontakty/" class="link headline-3">Контакты</a></li>
+                        <?php if (get_theme_mod('main_info_email')): ?>
+                            <li id="menu-item-106"
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-106"><a
+                                    href="mailto:<?= get_theme_mod('main_info_email'); ?>"
+                                    class="link"><?= get_theme_mod('main_info_email'); ?></a>
+                            </li>
+                        <?php endif ?>
+                        <?php if (get_theme_mod('social_link_vk')): ?>
+                            <li id="menu-item-107"
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-107"><a
+                                    href="<?= get_theme_mod('social_link_vk'); ?>" class="link">Вконтакте</a>
+                            </li>
+                        <?php endif ?>
+                        <?php if (get_theme_mod('social_link_youtube')): ?>
+                            <li id="menu-item-108"
+                                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-108"><a
+                                    href="<?= get_theme_mod('social_link_youtube'); ?>" class="link">Youtube</a>
+                            </li>
+                        <?php endif ?>
                     </ul>
                 </div>
             </div>

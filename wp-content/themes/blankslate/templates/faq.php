@@ -11,7 +11,7 @@ get_header();
     <section class="section p-0-140 fag-main">
         <div class="ellipse ellipse-brown"></div>
         <div class="content">
-            <div class="left-side">
+            <div class="left-side wow animate__animated animate__fadeIn">
                 <h1 class="headline-2"><?= the_title() ?></h1>
                 <p class="text-1"><?= text_br(get_theme_mod('faq_desc')) ?></p>
                 <?= button_brown('#modal-contact', 'Задать вопрос') ?>

@@ -821,16 +821,57 @@ ul.page-numbers {
     transform: rotate(-45deg) translate(0.5rem, -0.5rem);
 }
 
-li.menu-item:hover {
-    a.link {
-        color: $brown !important;
-    }
+li.menu-item:hover {}
+
+a.link:hover {
+    color: $brown !important;
 }
 
 .phone:hover {
     color: $brown !important;
 }
 
+a.link.headline-3 {
+    color: $dark;
+}
+
+#header #menu-block .sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border: none;
+    border-radius: 0;
+    width: max-content;
+    min-width: 15rem;
+    z-index: 1000;
+
+    padding-top: 2rem;
+}
+
+#header #menu-block .menu-item-has-children:hover .sub-menu {
+    display: block;
+}
+
+#header #menu-block .sub-menu .menu-item {
+    // padding: 1rem;
+    background-color: $bg;
+    transition: $transition;
+
+    &:hover {
+        background-color: #f4f4f4;
+    }
+
+    a.link {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+    }
+}
+
+.menu-item {
+    position: relative;
+}
 
 
 

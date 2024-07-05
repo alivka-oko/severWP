@@ -8,7 +8,7 @@ get_header();
             <?= get_template_part('breadcrumb') ?>
         </div>
     </section>
-    <section class="section p-0-140 career">
+    <section class="section p-0-140 career wow animate__animated animate__fadeIn">
         <div class="ellipse ellipse-brown"></div>
         <div class="content">
             <div class="left-side">
@@ -20,8 +20,8 @@ get_header();
                 <div class="medium-img" style="background: url('<?= get_theme_mod('career_section_img') ?>');">
                 </div>
             </div>
-            <p class="text-1 left-text"><?= text_br(get_theme_mod('career_section_desc_2')) ?></p>
-            <p class="text-1 right-text"><?= text_br(get_theme_mod('career_section_desc_3')) ?></p>
+            <p class="text-1 left-text wow animate__animated animate__fadeInUp"><?= text_br(get_theme_mod('career_section_desc_2')) ?></p>
+            <p class="text-1 right-text wow animate__animated animate__fadeInUp"><?= text_br(get_theme_mod('career_section_desc_3')) ?></p>
         </div>
     </section>
     <?php
@@ -51,7 +51,7 @@ get_header();
     if ($cards): ?>
         <section class="section uniq p-140">
             <div class="content">
-                <div class="cards">
+                <div class="cards wow animate__animated animate__fadeInUp">
                     <?php foreach ($cards as $item): ?>
                         <div class="card">
                             <h3 class="headline-3"><?= $item['title'] ?></h3>

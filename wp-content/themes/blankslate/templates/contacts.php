@@ -8,7 +8,7 @@ get_header();
             <?= get_template_part('breadcrumb') ?>
         </div>
     </section>
-    <section class="section p-0-140 contacts">
+    <section class="section p-0-140 contacts wow animate__animated animate__fadeIn">
         <div class="ellipse ellipse-brown"></div>
         <div class="ellipse ellipse-blue"></div>
         <div class="content">

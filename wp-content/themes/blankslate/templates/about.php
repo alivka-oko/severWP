@@ -9,7 +9,7 @@ $mediumphoto2 = get_theme_mod('about_company_section_2_medium_image');
 $bgphoto = get_theme_mod('about_company_section_3_image');
 ?>
 <main class="main about-page">
-    <section class="section about-1 p-96-140">
+    <section class="section about-1 p-96-140 wow animate__animated animate__fadeIn">
         <div class="ellipse ellipse-brown"></div>
         <div class="content">
             <?= get_template_part('breadcrumb') ?>
@@ -19,14 +19,14 @@ $bgphoto = get_theme_mod('about_company_section_3_image');
                     <!-- <div class="big-image" style="background: url(<?= $bigphoto1 ?>);"></div> -->
                      <img class="big-image" src="<?= $bigphoto1 ?>" alt="Фото о компании">
                 </div>
-                <div class="right-side">
+                <div class="right-side wow animate__animated animate__fadeInRight">
                     <p class="text-1"><?= text_br(get_theme_mod('about_company_section_1_description')) ?></p>
                     <div class="medium-image" style="background: url(<?= $mediumphoto1 ?>);"></div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="section about-2 p-96-140">
+    <section class="section about-2 p-96-140 wow animate__animated animate__fadeIn">
         <div class="ellipse ellipse-blue"></div>
         <div class="content">
             <div class="left-side">
@@ -35,9 +35,9 @@ $bgphoto = get_theme_mod('about_company_section_3_image');
                 <div class="medium-image" style="background: url(<?= $mediumphoto2 ?>);"></div>
             </div>
             <div class="right-side">
-                <h3 class="headline-3"><?= get_theme_mod('about_company_section_2_subtitle') ?></h3>
+                <h3 class="headline-3 wow animate__animated animate__fadeInRight"><?= get_theme_mod('about_company_section_2_subtitle') ?></h3>
                 <div class="big-image" style="background: url(<?= $bigphoto2 ?>);"></div>
-                <p class="text-1"><?= get_theme_mod('about_company_section_2_text') ?></p>
+                <p class="text-1 wow animate__animated animate__fadeInUp"><?= get_theme_mod('about_company_section_2_text') ?></p>
             </div>
         </div>
     </section>

@@ -451,12 +451,31 @@
     }
 
     #header ul.menu.text-2 {
-        gap: 3.6rem;
+        gap: 1.6rem;
     }
 
     #header .phone.headline-3 {
         margin-left: auto;
     }
+
+    #header #menu-block .sub-menu {
+        display: block;
+        position: revert;
+        padding-top: 0rem;
+    }
+
+    #header #menu-block .sub-menu .menu-item {
+        background-color: transparent;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+
+    #header #menu-block .sub-menu .menu-item a.link::before {
+        content: '— ';
+    }
+
 }
 
 @media (max-width:500px) {

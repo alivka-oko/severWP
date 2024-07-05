@@ -33,12 +33,9 @@ get_header();
         <div class="content">
             <div class="left-side">
                 <div class="headline">
-                    <h2 class="headline-2 wow animate__animated animate__fadeIn">о компании</h2>
-                    <p class="text-1 wow animate__animated animate__fadeIn">Северный Стандарт — уникальный
-                        лесопромышленный холдинг с полным циклом собственной лесозаготовки и специализацией
-                        на производстве широкого ассортимента продукции. <br><br>
-                        В фокусе развития — экологичные технологии комплексной переработки древесного сырья
-                        и максимально эффективное использование ресурсов.</p>
+                    <h2 class="headline-2 wow animate__animated animate__fadeIn"><?= get_theme_mod('about_title'); ?>
+                    </h2>
+                    <p class="text-1 wow animate__animated animate__fadeIn"><?= get_theme_mod('about_description'); ?></p>
                 </div>
                 <div class="about_medium_image wow animate__animated animate__fadeInUp"
                     style="background:url('<?= get_theme_mod('about_medium_image'); ?>')"></div>
@@ -55,7 +52,7 @@ get_header();
         </div>
         <div class="ellipse ellipse-brown"></div>
     </section>
-    <section class="section features p-140" 
+    <section class="section features p-140"
         style="background: url(<?php echo esc_url(get_theme_mod('features_bg')); ?>);">
         <div class="content">
             <h2 class="headline-2 wow animate__animated animate__fadeIn"><?= get_theme_mod('features_title') ?></h2>
@@ -74,11 +71,11 @@ get_header();
             <?php endif; ?>
         </div>
     </section>
-    <section class="section best-quality p-140">
+    <section class="section best-quality p-140  wow animate__animated animate__fadeIn">
         <div class="ellipse ellipse-brown"></div>
         <div class="content">
             <div class="top-content">
-                <div class="left-side">
+                <div class="left-side wow animate__animated animate__fadeInLeft">
                     <h2 class="headline-2"><?= get_theme_mod('best_quality_title') ?></h2>
                     <div class="words">
                         <p class="headline-3"><?= get_theme_mod('best_quality_word1') ?></p>
@@ -109,7 +106,7 @@ get_header();
                 <div class="left-side">
                     <h2 class="headline-2"><?= get_theme_mod('base_products_title') ?></h2>
                 </div>
-                <div class="right-side">
+                <div class="right-side  wow animate__animated animate__fadeInRight">
                     <p class="text-1"><?= text_br(get_theme_mod('base_products_text', '')); ?>
                     </p>
                 </div>
@@ -152,7 +149,7 @@ get_header();
                     <?= get_theme_mod('individual_approach_title') ?>
                 </h2>
                 <div class="main-part">
-                    <div class="medium-image"
+                    <div class="medium-image wow animate__animated animate__fadeInLeft"
                         style="background:url(<?= get_theme_mod('individual_approach_medium_image') ?>)"></div>
                     <div class="text-block">
                         <h3 class="headline-3"> <?= get_theme_mod('individual_approach_sub-title') ?></h3>
@@ -181,7 +178,7 @@ get_header();
     <section class="section recent-publications p-140">
         <div class="ellipse ellipse-brown"></div>
         <div class="content">
-            <div class="top-content">
+            <div class="top-content wow animate__animated animate__fadeIn">
                 <div class="left-side">
                     <h2 class="headline-2"><?= get_theme_mod('recent_publications_title') ?></h2>
                 </div>

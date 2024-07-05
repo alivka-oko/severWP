@@ -8,11 +8,11 @@ get_header();
             <?= get_template_part('breadcrumb') ?>
         </div>
     </section>
-    <section class="section media-head p-20">
+    <section class="section media-head p-20 wow animate__animated animate__fadeInUp">
         <div class="content">
             <div class="headline">
                 <h1 class="headline-2"><?= single_cat_title() ?></h1>
-                <div class="text-1"><?= category_description() ?></div>
+                <div class="text-1 wow animate__animated animate__fadeInRight"><?= category_description() ?></div>
             </div>
     </section>
     <?php

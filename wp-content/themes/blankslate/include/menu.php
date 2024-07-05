@@ -45,6 +45,24 @@ function add_svg_inside_menu_link($item_output, $item, $depth, $args)
     }
     return $item_output;
 }
+function add_first_a_class_to_menu($atts, $item, $args)
+{
+    // Проверяем, является ли текущий элемент первым в меню
+    if ($item->menu_order == 1) {
+        // Получаем параметр 'add_a_first_class' из $args
+        $first_a_class = isset($args->add_a_first_class) ? $args->add_a_first_class : '';
+
+        // Добавляем класс к атрибуту class ссылки
+        if (!empty($first_a_class)) {
+            $atts['class'] .= ' ' . $first_a_class;
+        }
+    }
+
+    return $atts;
+}
+add_filter('nav_menu_link_attributes', 'add_first_a_class_to_menu', 10, 3);
+
+
 
 add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
 add_filter('nav_menu_link_attributes', 'add_additional_class_on_a', 1, 3);
