@@ -9,32 +9,26 @@ get_header();
         </div>
     </section>
     <section class="section p-0-140 career">
+        <div class="ellipse ellipse-brown"></div>
         <div class="content">
             <div class="left-side">
-                <h1 class="headline-2"><?= the_title() ?></h1>
-                <p class="text-1">Мы стремимся привлечь профессионалов, которые разделяют наши ценности и видят своё
-                    будущее развитие карьеры в сфере деревообработки. Наша команда стремится к построению
-                    профессионального сообщества, где каждый сотрудник вносит свой вклад в общую цель.</p>
-                <?= button_brown('#', 'Оставить заявку') ?>
+                <h1 class="headline-2"><?= get_theme_mod('career_section_title') ?></h1>
+                <p class="text-1"><?= text_br(get_theme_mod('career_section_desc_1')) ?></p>
+                <?= button_brown('#modal-career', 'Откликнуться') ?>
             </div>
             <div class="right-side">
-                <div class="medium-img"
-                    style="background: url('https://gilfondrt.ru/wp-content/uploads/2023/01/yellow-white-helmet-safety-construction-site-min-scaled.jpg');">
+                <div class="medium-img" style="background: url('<?= get_theme_mod('career_section_img') ?>');">
                 </div>
             </div>
-            <p class="text-1 left-text">В связи с динамичным ростом и развитием нашей компании, мы активно ищем
-                талантливых
-                профессионалов. Собеседования проводятся как в формате онлайн через Zoom, так и очно в нашем офисе.
-            </p>
-            <p class="text-1 right-text">Для записи на собеседование направьте своё резюме на почту mail@north.com
-                и мы обязательно рассмотрим Вашу кандидатуру.
-            </p>
+            <p class="text-1 left-text"><?= text_br(get_theme_mod('career_section_desc_2')) ?></p>
+            <p class="text-1 right-text"><?= text_br(get_theme_mod('career_section_desc_3')) ?></p>
         </div>
     </section>
     <?php
     $career = CFS()->get('career');
     if ($career): ?>
         <section class="section faqs p-0-140">
+            <div class="ellipse ellipse-blue"></div>
             <div class="content">
                 <div class="accordion">
                     <?php foreach ($career as $item): ?>
@@ -48,9 +42,7 @@ get_header();
                         </section>
                     <?php endforeach; ?>
                 </div>
-                <div class="mini-block wow animate__animated animate__fadeInLeft"><span class="headline-3">></span><span
-                        class="headline-2">50</span><span class="text-2">видов
-                        деревьев</span></div>
+                <?= miniBlock(get_theme_mod('career_section_miniblock')) ?>
             </div>
         </section>
     <?php endif; ?>
@@ -61,7 +53,7 @@ get_header();
             <div class="content">
                 <div class="cards">
                     <?php foreach ($cards as $item): ?>
-                        <div class="card"> 
+                        <div class="card">
                             <h3 class="headline-3"><?= $item['title'] ?></h3>
                             <p class="text-2"><?= $item['description'] ?></p>
                         </div>

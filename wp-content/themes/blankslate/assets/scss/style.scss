@@ -14,6 +14,7 @@
 @import 'contacts.scss';
 @import 'career.scss';
 @import 'single.scss';
+@import 'modal.scss';
 
 * {
     margin: 0;
@@ -59,6 +60,12 @@ video {
 
 a {
     text-decoration: none;
+    transition: $transition;
+}
+
+textarea {
+    width: 100%;
+    resize: none;
 }
 
 .main {
@@ -290,9 +297,12 @@ a {
 
 .section {
     position: relative;
-    overflow: hidden;
+    // overflow: hidden;
 }
 
+.main {
+    overflow: hidden;
+}
 
 .mini-block {
     position: absolute;
@@ -473,8 +483,8 @@ a {
     }
 
     &:checked~.accordion__content {
-        max-height: 100rem;
-        transition: all 2s;
+        max-height: 500rem;
+        transition: all 4s;
     }
 }
 
@@ -565,3 +575,263 @@ a {
     opacity: 1;
     z-index: 1;
 }
+
+ul.page-numbers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;
+
+    li {
+        transition: $transition;
+        border-radius: 3.2rem;
+
+        @extend .text-2;
+
+        a {
+            color: #0E0E0E;
+        }
+
+        &:has(.current) {
+            background: $primary;
+            color: $white;
+        }
+
+        &:hover :not(.dots) {
+            background: $primary;
+            color: $white;
+            border-radius: 3.2rem;
+
+            a {
+                color: $white;
+            }
+        }
+    }
+
+    a.page-numbers,
+    span.page-numbers {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 3.2rem;
+        height: 3.2rem;
+    }
+
+    .page-numbers:empty {
+        display: none;
+    }
+
+}
+
+.checkbox:checked {
+    ~.custom-checkbox {
+        background-color: $primary;
+
+        svg {
+            display: block;
+        }
+    }
+}
+
+.custom-checkbox {
+    transition: $transition;
+    width: 2rem;
+    height: 2rem;
+    background-color: transparent;
+    border: 0.1rem solid $primary;
+    border-radius: 0.3rem;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        display: none;
+    }
+}
+
+
+#footer {
+    .ellipse.ellipse-blue {
+        z-index: -1;
+        top: -40%;
+        right: -43%;
+    }
+}
+
+#footer {
+    overflow: hidden;
+}
+
+.section.best-quality {
+    .ellipse.ellipse-brown {
+        right: -20%;
+        top: -25%;
+    }
+}
+
+.section.base-products {
+    .ellipse.ellipse-blue {
+        top: -10%;
+        left: -20%;
+    }
+}
+
+.section.individual-approach {
+    .ellipse.ellipse-brown {
+        right: -10%;
+        top: -40%;
+    }
+
+    .ellipse.ellipse-blue {
+        bottom: -50%;
+        left: -10%;
+    }
+}
+
+.section.recent-publications {
+    .ellipse.ellipse-brown {
+        left: -10%;
+        top: -20%;
+    }
+}
+
+.section.about-1 {
+    .ellipse.ellipse-brown {
+        left: -40%;
+        top: 20%;
+    }
+}
+
+.section.about-2 {
+    .ellipse.ellipse-blue {
+        right: -30%;
+        bottom: -30%;
+    }
+}
+
+.section.investment {
+    .ellipse.ellipse-blue {
+        right: -25%;
+        bottom: -70%;
+    }
+
+    .ellipse.ellipse-brown {
+        left: -40%;
+        top: 10%;
+    }
+}
+
+.section.uniq {
+    .ellipse.ellipse-brown {
+        left: 0;
+        bottom: -50%;
+    }
+}
+
+.section.uniq {
+    .ellipse.ellipse-brown {
+        left: 0;
+        bottom: -50%;
+    }
+}
+
+.section.contacts {
+    .ellipse.ellipse-blue {
+        right: -25%;
+        bottom: -80%;
+    }
+
+    .ellipse.ellipse-brown {
+        left: -40%;
+        bottom: -20%;
+    }
+}
+
+.section.career {
+    .ellipse.ellipse-brown {
+        left: -40%;
+        bottom: -10%;
+    }
+}
+
+.section.faqs {
+    .ellipse.ellipse-blue {
+        right: -30%;
+        top: -40%;
+    }
+}
+
+.section.main-content,
+.section.product-main,
+.section.fag-main,
+.section.faqs,
+.section.media-articles,
+.section.catalog-main {
+    .ellipse.ellipse-brown {
+        left: -40%;
+        top: 0%;
+    }
+
+    .ellipse.ellipse-blue {
+        right: -30%;
+        top: 30%;
+    }
+}
+
+.section.eco-1,
+.section.documents {
+    .ellipse.ellipse-brown {
+        left: -40%;
+        top: 0%;
+    }
+
+    .ellipse.ellipse-blue {
+        right: -30%;
+        top: 50%;
+    }
+}
+
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    border: none;
+    margin: 0 1rem;
+}
+
+.burger-menu span {
+    width: 3.5rem;
+    height: 0.3rem;
+    background-color: $brown;
+    margin: 0.4rem 0;
+    transition: 0.4s;
+}
+
+.burger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(1rem, 1rem);
+}
+
+.burger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(0.5rem, -0.5rem);
+}
+
+li.menu-item:hover {
+    a.link {
+        color: $brown !important;
+    }
+}
+
+.phone:hover {
+    color: $brown !important;
+}
+
+
+
+
+@import 'media.scss';

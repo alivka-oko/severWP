@@ -9,6 +9,8 @@ get_header();
         </div>
     </section>
     <section class="section p-0-140 contacts">
+        <div class="ellipse ellipse-brown"></div>
+        <div class="ellipse ellipse-blue"></div>
         <div class="content">
             <div class="left-side">
                 <h1 class="headline-2"><?= the_title() ?></h1>

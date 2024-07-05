@@ -18,6 +18,7 @@
     .big-image {
         width: 74.7rem;
         height: 52rem;
+        object-fit: cover;
 
         border-radius: $border;
         background-position: center !important;

@@ -7,6 +7,8 @@
         </div>
     </section>
     <section class="section p-0-140 eco-1">
+        <div class="ellipse ellipse-brown"></div>
+        <div class="ellipse ellipse-blue"></div>
         <div class="content">
             <div class="top-content">
                 <h1 class="headline-2"><?= get_theme_mod('ecology_panel_1_title') ?></h1>
@@ -18,9 +20,11 @@
     <section class="section useful-initiatives p-0-140">
         <div class="content">
             <div class="left-side">
-                <h2 class="headline-2  wow animate__ animate__fadeInUp animated" style="visibility: visible;"><?= get_theme_mod('ecology_panel_2_title') ?></h2>
+                <h2 class="headline-2  wow animate__ animate__fadeInUp animated" style="visibility: visible;">
+                    <?= get_theme_mod('ecology_panel_2_title') ?></h2>
                 <div class="main-part">
-                    <div class="medium-image" style="background:url(<?= get_theme_mod('ecology_panel_2_left_image') ?>)"></div>
+                    <div class="medium-image"
+                        style="background:url(<?= get_theme_mod('ecology_panel_2_left_image') ?>)"></div>
                     <div class="text-block">
                         <h3 class="headline-3"> <?= get_theme_mod('ecology_panel_2_sub_title') ?> </h3>
                         <p class="text-1"><?= text_br(get_theme_mod('ecology_panel_2_desc')) ?>
@@ -30,7 +34,8 @@
             </div>
             <div class="right-side">
                 <?= miniBlock(get_theme_mod('ecology_panel_2_miniblock')) ?>
-                <div class="large-image" style="background:url(<?= get_theme_mod('ecology_panel_2_right_image') ?>)"></div>
+                <div class="large-image" style="background:url(<?= get_theme_mod('ecology_panel_2_right_image') ?>)">
+                </div>
             </div>
         </div>
     </section>
@@ -38,7 +43,8 @@
         <div class="content">
             <div class="card  wow animate__ animate__fadeInDown animated" style="visibility: visible;">
                 <img src="http://sever/wp-content/uploads/2024/06/icon.svg" alt="логотип">
-                <h2 class="headline-2 wow animate__ animate__fadeIn" style="visibility: visible;"><?= get_theme_mod('ecology_panel_3_title') ?></h2>
+                <h2 class="headline-2 wow animate__ animate__fadeIn" style="visibility: visible;">
+                    <?= get_theme_mod('ecology_panel_3_title') ?></h2>
                 <p class="text-1"><?= text_br(get_theme_mod('ecology_panel_3_desc')) ?></p>
             </div>
         </div>

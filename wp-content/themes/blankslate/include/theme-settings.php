@@ -117,6 +117,37 @@ function miniBlock($text)
     return '<div class="mini-block wow animate__animated animate__fadeInRight">' . $text . '</div>';
 }
 
+if (!function_exists('custom_pagination')) {
+    function custom_pagination($query = null)
+    {
+        global $wp_query;
+        if ($query) {
+            $total = $query->max_num_pages;
+        } else {
+            $total = $wp_query->max_num_pages;
+        }
+
+        if ($total > 1) {
+            $big = 999999999; // need an unlikely integer
+            $current_page = max(1, get_query_var('paged'));
+
+            echo paginate_links(
+                array(
+                    'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+                    'format' => '?paged=%#%',
+                    'current' => $current_page,
+                    'total' => $total,
+                    'prev_text' => '',
+                    'next_text' => '',
+                    'end_size' => 1,
+                    'mid_size' => 2,
+                    'type' => 'list',
+                )
+            );
+        }
+    }
+}
+
 
 
 ?>

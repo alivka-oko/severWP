@@ -9,6 +9,8 @@ get_header();
         </div>
     </section>
     <section class="section investment p-0-140">
+        <div class="ellipse ellipse-brown"></div>
+        <div class="ellipse ellipse-blue"></div>
         <div class="content">
             <div class="left-side">
                 <h2 class="headline-2"><?= get_theme_mod('quality_section_1_title') ?></h2>
@@ -45,7 +47,8 @@ get_header();
             <?php endif; ?>
         </div>
     </section>
-    <section class="section uniq p-140">
+    <section class="section uniq main-te p-140">
+        <div class="ellipse ellipse-brown"></div>
         <div class="content">
             <div class="top-content">
                 <h2 class="headline-2"><?= get_theme_mod('quality_section_3_title') ?></h2>

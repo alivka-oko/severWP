@@ -82,6 +82,26 @@ add_action('customize_register', function ($wp_customize) {
         )
     );
 
+    $wp_customize->add_setting('main_btn', array('default' => ''));
+    $wp_customize->add_control(
+        'main_btn',
+        array(
+            'label' => 'Текст кнопки',
+            'section' => 'main_section',
+            'type' => 'text',
+        )
+    );
+
+    $wp_customize->add_setting('main_btn_url', array('default' => ''));
+    $wp_customize->add_control(
+        'main_btn_url',
+        array(
+            'label' => 'Ссылка кнопки',
+            'section' => 'main_section',
+            'type' => 'text',
+        )
+    );
+
     // Секция "О компании" в панели "Главная"
     $wp_customize->add_section(
         'about_section',
@@ -1282,6 +1302,75 @@ add_action('customize_register', function ($wp_customize) {
                 'label' => 'Задний фон',
                 'section' => 'ecology_panel_3',
             )
+        )
+    );
+
+    // Панель "Вакансии"
+    $wp_customize->add_section(
+        'career_main_section',
+        array(
+            'title' => 'Вакансии',
+            'priority' => 30,
+        )
+    );
+
+    // Поля для секции "Вакансии"
+    $wp_customize->add_setting('career_section_title', array('default' => ''));
+    $wp_customize->add_control(
+        'career_section_title',
+        array(
+            'label' => 'Заголовок',
+            'section' => 'career_main_section',
+            'type' => 'text',
+        )
+    );
+    $wp_customize->add_setting('career_section_desc_1', array('default' => ''));
+    $wp_customize->add_control(
+        'career_section_desc_1',
+        array(
+            'label' => 'Описание 1',
+            'section' => 'career_main_section',
+            'type' => 'textarea',
+        )
+    );
+    $wp_customize->add_setting('career_section_desc_2', array('default' => ''));
+    $wp_customize->add_control(
+        'career_section_desc_2',
+        array(
+            'label' => 'Описание 2',
+            'section' => 'career_main_section',
+            'type' => 'textarea',
+        )
+    );
+    $wp_customize->add_setting('career_section_desc_3', array('default' => ''));
+    $wp_customize->add_control(
+        'career_section_desc_3',
+        array(
+            'label' => 'Описание 3',
+            'section' => 'career_main_section',
+            'type' => 'textarea',
+        )
+    );
+
+    $wp_customize->add_setting('career_section_img');
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize,
+            'career_section_img',
+            array(
+                'label' => 'Изображенгие',
+                'section' => 'career_main_section',
+            )
+        )
+    );
+
+    $wp_customize->add_setting('career_section_miniblock', array('default' => ''));
+    $wp_customize->add_control(
+        'career_section_miniblock',
+        array(
+            'label' => 'Мини-блок',
+            'section' => 'career_main_section',
+            'type' => 'text',
         )
     );
 });

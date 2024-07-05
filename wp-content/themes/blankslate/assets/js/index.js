@@ -2,7 +2,7 @@ import '../scss/style.scss';
 import WOW from 'wowjs';
 import 'animate.css/animate.min.css';
 import 'glightbox/dist/css/glightbox.css';
-
+import '../js/modal.js';
 
 new WOW.WOW().init();
 
@@ -52,4 +52,14 @@ const swiper = new Swiper('.swiper-product', {
     thumbs: {                       //added
         swiper: swiper_thumbnail,   //added
     },
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const burgerMenu = document.getElementById('burger-menu');
+    const menuBlock = document.getElementById('menu-block');
+
+    burgerMenu.addEventListener('click', function () {
+        menuBlock.classList.toggle('active');
+        burgerMenu.classList.toggle('active');
+    });
 });

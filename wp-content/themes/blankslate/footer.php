@@ -1,7 +1,8 @@
 <?php get_sidebar(); ?>
 
 </main>
-<footer id="footer" role="contentinfo">
+<footer id="footer" role="contentinfo" class="section">
+    <div class="ellipse ellipse-blue"></div>
     <div class="content">
         <div class="top-content">
             <div class="main-info">
@@ -13,7 +14,7 @@
                     <a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
                 <?php endif; ?>
                 <p class="text-1"><?= get_theme_mod('main_info_postcode'); ?></p>
-                <a href="tel:1234" class="headline-3 phone"><?= get_theme_mod('main_info_phone'); ?></a>
+                <a href="tel:<?= get_theme_mod('main_info_phone'); ?>" class="headline-3 phone"><?= get_theme_mod('main_info_phone'); ?></a>
             </div>
             <div class="menus">
                 <div class="col">
@@ -63,7 +64,8 @@
                     <ul class="menu text-2">
                         <li id="menu-item-106"
                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-106"><a
-                                href="mailto:<?= get_theme_mod('main_info_email'); ?>" class="link"><?= get_theme_mod('main_info_email'); ?></a>
+                                href="mailto:<?= get_theme_mod('main_info_email'); ?>"
+                                class="link"><?= get_theme_mod('main_info_email'); ?></a>
                         </li>
                         <li id="menu-item-107"
                             class="menu-item menu-item-type-custom menu-item-object-custom menu-item-107"><a
@@ -95,6 +97,7 @@
     </div>
 </footer>
 </div>
+<?php get_template_part('modal'); ?>
 <?php wp_footer(); ?>
 </body>
 

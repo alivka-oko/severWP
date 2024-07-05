@@ -30,12 +30,11 @@
 
     &-content {
         .has-medium-font-size {
-            margin-top: 3.2rem;
-            margin-bottom: 5.6rem;
             @extend .headline-3
         }
 
         p {
+            padding: 1.6rem 0;
             color: $darkgray;
             @extend .text-1
         }

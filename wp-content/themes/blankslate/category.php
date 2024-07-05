@@ -9,7 +9,9 @@ get_header();
         </div>
     </section>
     <section class="section catalog-main">
-        <div class="content">
+        <div class="ellipse ellipse-brown"></div>
+        <div class="ellipse ellipse-blue"></div>
+        <div class="content p-20">
             <div class="left-side">
                 <h1 class="headline-2"><?= single_cat_title() ?></h1>
                 <div class="text-1"><?= text_br(category_description()) ?></div>

@@ -32,10 +32,19 @@ function button_long($url, $input)
 function button_brown($url, $input)
 {
     if ($url != '') {
-        return '<a href="' . $url . '" class="button button-brown">' . $input . '  <svg viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+        if (strpos($url, '#modal') === 0) {
+            return '<div class="button button-brown" data-modal="open" data-target="' . $url . '">' . $input . '<svg
+                        viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 11L11 1M11 1H2M11 1V11" stroke="white" stroke-width="1.5" stroke-linecap="square"
+                            stroke-linejoin="bevel" />
+                    </svg>
+                </div>';
+        } else {
+            return '<a href="' . $url . '" class="button button-brown">' . $input . '  <svg viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M2 11L11 1M11 1H2M11 1V11" stroke="white" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="bevel" />
                             </svg>
                         </a>';
+        }
     } else {
         return '<div class="button button-brown">' . $input . '  <svg viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M2 11L11 1M11 1H2M11 1V11" stroke="white" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="bevel" />

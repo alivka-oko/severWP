@@ -5,7 +5,7 @@ $blocks_specifications = CFS()->get('blocks-specifications');
 $certificates = CFS()->get('certificates');
 ?>
 <main class="main single">
-    <section class="section menu-bread">
+    <section class="section p-20">
         <div class="content">
             <ul class="menu menu-product text-2">
                 <?php
@@ -21,7 +21,9 @@ $certificates = CFS()->get('certificates');
             <?= get_template_part('breadcrumb') ?>
         </div>
     </section>
-    <section class="section product-main">
+    <section class="section product-main p-20">
+        <div class="ellipse ellipse-brown"></div>
+        <div class="ellipse ellipse-blue"></div>
         <div class="content">
             <div class="left-side">
                 <h1 class="headline-2"><?= the_title() ?></h1>
@@ -50,7 +52,7 @@ $certificates = CFS()->get('certificates');
             </div>
         </div>
     </section>
-    <section class="section product-advantages p-56">
+    <section class="section product-advantages p-56 ">
         <div class="content">
             <div class="left-side">
                 <h3 class="headline-3">Преимущества</h3>

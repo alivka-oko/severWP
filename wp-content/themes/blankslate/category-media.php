@@ -8,7 +8,7 @@ get_header();
             <?= get_template_part('breadcrumb') ?>
         </div>
     </section>
-    <section class="section media-head">
+    <section class="section media-head p-20">
         <div class="content">
             <div class="headline">
                 <h1 class="headline-2"><?= single_cat_title() ?></h1>
@@ -20,7 +20,8 @@ get_header();
     if (have_posts()):
         ?>
         <section class="section media-articles">
-            <div class="content">
+            <div class="ellipse ellipse-brown"></div>
+            <div class="content p-0-140">
                 <div class="cards p-56">
                     <?php
                     while (have_posts()):
@@ -32,7 +33,7 @@ get_header();
                             <a href="<?= the_permalink() ?>" class="card-text-block">
                                 <h3 class="headline-3 card-title"><?= get_the_title() ?></h3>
                                 <div class="text-1 card-description"><?= the_excerpt() ?></div>
-                                <span class="text-2 card-date"><?= the_date('d.m') ?></span>
+                                <span class="text-2 card-date"><?= get_the_date('d.m') ?></span>
                             </a>
                         </article>
                         <?php
@@ -40,6 +41,9 @@ get_header();
                     ?>
                     <?= get_template_part('social') ?>
                 </div>
+                <?php
+                custom_pagination();
+                ; ?>
             </div>
         </section>
         <?php

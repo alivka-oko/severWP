@@ -7,6 +7,7 @@
         background-size: cover !important;
         background-repeat: no-repeat !important;
         background-position: center !important;
+        border-radius: $border;
 
         display: flex;
         align-items: end;
@@ -189,7 +190,7 @@
         transition: $transition;
         margin-top: 7.1rem;
         width: 100%;
-        height: 53rem;
+        height: 50rem;
         border-radius: $border;
 
         :hover {
@@ -548,7 +549,7 @@
 }
 
 
-.sticky-container {
+.section.section-home {
     .ellipse.ellipse-blue {
         left: -20%;
         top: 45%;

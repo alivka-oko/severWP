@@ -10,6 +10,8 @@ get_header();
     </section>
 
     <section class="section p-0-140 documents">
+        <div class="ellipse ellipse-brown"></div>
+        <div class="ellipse ellipse-blue"></div>
         <div class="content">
             <div class="headline">
                 <h1 class="headline-2"><?= the_title() ?></h1>
