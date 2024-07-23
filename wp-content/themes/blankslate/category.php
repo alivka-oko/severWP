@@ -15,7 +15,7 @@ get_header();
             <div class="left-side wow animate__animated animate__fadeIn">
                 <h1 class="headline-2"><?= single_cat_title() ?></h1>
                 <div class="text-1"><?= text_br(category_description()) ?></div>
-                <?= button_brown('#', 'Задать вопрос') ?>
+                <?= button_brown('#modal-contact', 'Задать вопрос') ?>
             </div>
             <div class="right-side">
                 <?php if (function_exists('z_taxonomy_image'))

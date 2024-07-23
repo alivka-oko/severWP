@@ -711,4 +711,18 @@
     #header .phone.headline-3 {
         display: none;
     }
+
+    .fag-main .content .right-side img,
+    .catalog-main .content .right-side img,
+    .product-main .content .right-side img {
+        height: 20rem;
+    }
+
+    .product-main .swiper-thumbnail .swiper-slide {
+        height: 10rem;
+    }
+
+    .product-main .swiper-thumbnail {
+        margin-top: 1rem;
+    }
 }

@@ -18,7 +18,13 @@ import 'swiper/swiper-bundle.css';
 const swiper_thumbnail = new Swiper(".swiper-thumbnail", {
     slidesPerView: 3,
     loop: false,
-    spaceBetween: rem * 2.4
+    spaceBetween: rem * 1,
+    breakpoints: {
+        500: {
+            spaceBetween: rem * 2.4
+        }
+    }
+
 })
 const slides = document.querySelectorAll('.swiper-thumbnail .swiper-slide');
 

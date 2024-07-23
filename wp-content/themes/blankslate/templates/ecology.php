@@ -45,7 +45,7 @@
     <section class="section care p-140" style="background: url(<?= get_theme_mod('ecology_panel_3_bg') ?>);">
         <div class="content">
             <div class="card  wow animate__animated animate__fadeInDown animated" style="visibility: visible;">
-                <img src="http://sever/wp-content/uploads/2024/06/icon.svg" alt="логотип">
+                <img src="<?= get_theme_mod('mini-logo') ?>" alt="логотип">
                 <h2 class="headline-2 wow animate__animated animate__fadeIn" style="visibility: visible;">
                     <?= get_theme_mod('ecology_panel_3_title') ?>
                 </h2>

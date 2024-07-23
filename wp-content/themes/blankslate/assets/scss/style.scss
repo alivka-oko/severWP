@@ -845,8 +845,9 @@ a.link.headline-3 {
     width: max-content;
     min-width: 15rem;
     z-index: 1000;
-
-    padding-top: 2rem;
+    border-radius: $border;
+    overflow: hidden;
+    padding-top: 2.5rem;
 }
 
 #header #menu-block .menu-item-has-children:hover .sub-menu {
@@ -866,6 +867,7 @@ a.link.headline-3 {
         display: block;
         width: 100%;
         padding: 1rem;
+        border-bottom: 0.1rem solid $white;
     }
 }
 

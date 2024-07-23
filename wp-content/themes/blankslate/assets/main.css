@@ -1908,7 +1908,9 @@ a.link.headline-3, .single-content a.link.has-medium-font-size {
   width: max-content;
   min-width: 15rem;
   z-index: 1000;
-  padding-top: 2rem; }
+  border-radius: 0.8rem;
+  overflow: hidden;
+  padding-top: 2.5rem; }
 
 #header #menu-block .menu-item-has-children:hover .sub-menu {
   display: block; }
@@ -1921,7 +1923,8 @@ a.link.headline-3, .single-content a.link.has-medium-font-size {
   #header #menu-block .sub-menu .menu-item a.link {
     display: block;
     width: 100%;
-    padding: 1rem; }
+    padding: 1rem;
+    border-bottom: 0.1rem solid #FFFFFF; }
 
 .menu-item {
   position: relative; }
@@ -2341,7 +2344,15 @@ a.link.headline-3, .single-content a.link.has-medium-font-size {
   .faqs .mini-block {
     margin-bottom: 4rem; }
   #header .phone.headline-3, #header .single-content .phone.has-medium-font-size, .single-content #header .phone.has-medium-font-size {
-    display: none; } }
+    display: none; }
+  .fag-main .content .right-side img,
+  .catalog-main .content .right-side img,
+  .product-main .content .right-side img {
+    height: 20rem; }
+  .product-main .swiper-thumbnail .swiper-slide {
+    height: 10rem; }
+  .product-main .swiper-thumbnail {
+    margin-top: 1rem; } }
 
 /*!***************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[0].use[1]!./node_modules/sass-loader/dist/cjs.js!./node_modules/animate.css/animate.min.css ***!
